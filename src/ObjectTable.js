@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import ObjectTableRow from './ObjectTableRow';
-import M from '../_common/M';
+import M from './M';
 
 const ObjectTable = ({ object }) => (
 	<table>

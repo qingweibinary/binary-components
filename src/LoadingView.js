@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoSpinner from '../_common/LogoSpinner';
+import LogoSpinner from './LogoSpinner';
 
 export default () => (
     <div className="mobile-page">

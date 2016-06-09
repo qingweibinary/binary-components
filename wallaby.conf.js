@@ -17,8 +17,12 @@ module.exports = wallaby => ({
     compilers: {
         '**/*.js': wallaby.compilers.babel({
             presets: [
+                'react',
                 'es2015',
                 'stage-1',
+            ],
+            plugins: [
+                'transform-function-bind',
             ],
         }),
     },

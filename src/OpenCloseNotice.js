@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import M from '../_common/M';
+import M from './M';
 
 export default class OpenCloseNotice extends Component {
 

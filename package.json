@@ -1,6 +1,6 @@
 {
   "name": "binary-components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React Components for Binary.com Apps",
   "main": "lib/",
   "scripts": {
@@ -47,6 +47,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
+    "enzyme": "^2.3.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^8.0.0",
     "eslint-plugin-import": "^1.8.1",
@@ -58,6 +59,7 @@
     "immutable": "^3.8.1",
     "mocha": "^2.4.5",
     "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0"
   }
 }

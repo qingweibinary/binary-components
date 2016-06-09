@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
-import NumberPlain from '../_common/NumberPlain';
-import NumberColored from '../_common/NumberColored';
-import M from '../_common/M';
+import NumberPlain from './NumberPlain';
+import NumberColored from './NumberColored';
+import M from './M';
 
 export default class LabeledNumber extends Component {
     static propTypes = {
@@ -27,4 +27,3 @@ export default class LabeledNumber extends Component {
         );
     }
 }
-
