@@ -9,7 +9,8 @@ export default class Resizer extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { mousemove: ::this.onGlobalMouseMove, mouseup: ::this.onGlobalMouseUp };
+		this.mousemove = ::this.onGlobalMouseMove;
+		this.mouseup = ::this.onGlobalMouseUp;
 	}
 
 	onMouseDown() {
@@ -17,8 +18,8 @@ export default class Resizer extends Component {
 	}
 
 	addGlobalEventHandlers() {
-		window.addEventListener('mousemove', this.state.mousemove);
-		window.addEventListener('mouseup', this.state.mouseup);
+		window.addEventListener('mousemove', this.mousemove);
+		window.addEventListener('mouseup', this.mouseup);
 	}
 
 	onGlobalMouseMove(e) {
@@ -27,8 +28,8 @@ export default class Resizer extends Component {
 
 	onGlobalMouseUp(e) {
 		this.props.onResize(e);
-		window.removeEventListener('mousemove', this.state.mousemove);
-		window.removeEventListener('mouseup', this.state.mouseup);
+		window.removeEventListener('mousemove', this.mousemove);
+		window.removeEventListener('mouseup', this.mouseup);
 	}
 
 	render() {
