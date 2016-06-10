@@ -10,7 +10,11 @@ export default class DateOfBirth extends Component {
 		onDayChange: PropTypes.func,
 		onMonthChange: PropTypes.func,
 		onYearChange: PropTypes.func,
-	}
+	};
+
+	static defaultProps = {
+		date: new Date(),
+	};
 
 	render() {
 		const { date, onDayChange, onMonthChange, onYearChange } = this.props;

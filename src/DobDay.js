@@ -4,7 +4,7 @@ export default class DobDay extends Component {
 
 	static propTypes = {
 		day: PropTypes.number.isRequired,
-		onDayChange: PropTypes.func.isRequired,
+		onDayChange: PropTypes.func,
 	}
 
 	render() {

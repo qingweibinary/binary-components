@@ -36,7 +36,6 @@
   },
   "homepage": "https://github.com/binary-com/binary-components#readme",
   "peerDependencies": {
-    "binary-utils": "^3.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-intl": "^2.1.2",
@@ -71,6 +70,7 @@
     "react-pure-render": "^1.0.2"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "binary-utils": "^3.4.0"
   }
 }
