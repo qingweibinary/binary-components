@@ -9,6 +9,11 @@ export default class DigitStatsChart extends Component {
 		stats: PropTypes.arrayOf(PropTypes.number).isRequired,
 	};
 
+	static defaultProps = {
+		orientation: 'horizontal',
+		stats: [],
+	};
+
 	render() {
 		const { stats, orientation } = this.props;
 		const min = arrayMin(stats);

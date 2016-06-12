@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import NumberPlain from '../_common/NumberPlain';
-import NumberColored from '../_common/NumberColored';
+import NumberPlain from './NumberPlain';
+import NumberColored from './NumberColored';
 
 export default class Number extends Component {
     static propTypes = {
