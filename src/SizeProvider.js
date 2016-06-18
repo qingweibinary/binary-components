@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 export default class SizeProvider extends Component {
-    constructor(props) {
-        super(props);
-        const { height, width } = props.style;
-        this.state = {
-            height,
-            width,
-            resize: ::this.onResize,
-        };
-    }
 
     static propTypes = {
         children: React.PropTypes.object,
         style: React.PropTypes.object.isRequired,
     };
 
+    constructor(props) {
+        super(props);
+        const { height, width } = props.style;
+        this.state = {
+            height,
+            width,
+        };
+    }
+
     componentDidMount() {
-        window.addEventListener('resize', this.state.resize, true);
+        window.addEventListener('resize', this.onResize, true);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.state.resize, true);
+        window.removeEventListener('resize', this.onResize, true);
     }
 
-    onResize() {
+    onResize = () => {
         const targetDOM = ReactDOM.findDOMNode(this);
         this.setState({ height: targetDOM.clientHeight, width: targetDOM.clientWidth });
     }

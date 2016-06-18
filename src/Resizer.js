@@ -7,26 +7,20 @@ export default class Resizer extends Component {
 		className: PropTypes.string,
 	};
 
-	constructor(props) {
-		super(props);
-		this.mousemove = ::this.onGlobalMouseMove;
-		this.mouseup = ::this.onGlobalMouseUp;
-	}
-
-	onMouseDown() {
+	onMouseDown = () => {
 		this.addGlobalEventHandlers();
 	}
 
 	addGlobalEventHandlers() {
-		window.addEventListener('mousemove', this.mousemove);
-		window.addEventListener('mouseup', this.mouseup);
+		window.addEventListener('mousemove', this.onGlobalMouseMove);
+		window.addEventListener('mouseup', this.onGlobalMouseUp);
 	}
 
-	onGlobalMouseMove(e) {
+	onGlobalMouseMove = e => {
 		this.props.onResize(e);
 	}
 
-	onGlobalMouseUp(e) {
+	onGlobalMouseUp = e => {
 		this.props.onResize(e);
 		window.removeEventListener('mousemove', this.mousemove);
 		window.removeEventListener('mouseup', this.mouseup);
@@ -36,7 +30,7 @@ export default class Resizer extends Component {
 		return (
 			<div
 				className={this.props.className}
-				onMouseDown={::this.onMouseDown}
+				onMouseDown={this.onMouseDown}
 			>
 				<span className="resizer-handle" />
 			</div>

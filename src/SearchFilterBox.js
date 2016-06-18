@@ -18,13 +18,13 @@ export default class SearchFilterBox extends Component {
 
     filter(searchString) {
         const { rows } = this.props;
-        const filteredRows = rows.filter(row => {
-            return row.join().indexOf(searchString) !== -1;
-        });
+        const filteredRows = rows.filter(row =>
+            row.join().indexOf(searchString) !== -1
+        );
         this.setState({ filteredRows });
     }
 
-    onQueryChange(e) {
+    onQueryChange = e => {
         const val = e.target.value;
         this.props.onQueryChange(val);
         this.filter(val);
@@ -35,7 +35,13 @@ export default class SearchFilterBox extends Component {
         const { filteredRows } = this.state;
         return (
             <div>
-                <InputGroup autoFocus type="text" placeholder="Keyword to search" value={searchString} onChange={::this.onQueryChange} />
+                <InputGroup
+                    autoFocus
+                    type="text"
+                    placeholder="Keyword to search"
+                    value={searchString}
+                    onChange={this.onQueryChange}
+                />
                 <table>
                     <tbody>
                         {

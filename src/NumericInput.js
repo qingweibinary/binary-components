@@ -19,13 +19,13 @@ export default class NumericInput extends Component {
         onChange: () => {},
     };
 
-    stepUp() {
+    onStepUp = () => {
         const { step, value, onChange } = this.props;
         const newValue = +value + step;
         onChange({ target: { value: newValue } });
     }
 
-    stepDown() {
+    onStepDown = () => {
         const { step, value, onChange } = this.props;
         const newValue = +value - step;
         onChange({ target: { value: newValue } });
@@ -36,7 +36,7 @@ export default class NumericInput extends Component {
 
         return (
             <div className={className}>
-                <button className="btn-flat" onClick={::this.stepDown}>&ndash;</button>
+                <button className="btn-flat" onClick={this.onStepDown}>&ndash;</button>
                 <input
                     type="number"
                     value={value}
@@ -46,7 +46,7 @@ export default class NumericInput extends Component {
                     list="values"
                     onChange={onChange}
                 />
-                <button className="btn-flat" onClick={::this.stepUp}>+</button>
+                <button className="btn-flat" onClick={this.onStepUp}>+</button>
                 <datalist id="values">
                     {valueList.map(x =>
                         <option key={x} value={x} />
