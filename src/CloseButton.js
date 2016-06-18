@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 export default class CloseButton extends Component {
+
+    shouldComponentUpdate = () => false;
+
     render() {
         return (
             <a className="close-btn" {...this.props}>

@@ -11,10 +11,6 @@ export default class Resizer extends Component {
 	};
 
 	onMouseDown = () => {
-		this.addGlobalEventHandlers();
-	}
-
-	addGlobalEventHandlers() {
 		window.addEventListener('mousemove', this.onGlobalMouseMove);
 		window.addEventListener('mouseup', this.onGlobalMouseUp);
 	}

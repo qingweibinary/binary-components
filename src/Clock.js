@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import shouldPureComponentUpdate from 'react-pure-render/function';
 import dateToGMTString from 'binary-utils/lib/dateToGMTString';
 
 export default class Clock extends Component {
+
+    shouldComponentUpdate = shouldPureComponentUpdate;
 
     static propTypes = {
         serverTimeDiff: PropTypes.number,
