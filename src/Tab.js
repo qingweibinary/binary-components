@@ -1,7 +1,10 @@
 import React, { PropTypes, Component } from 'react';
+import shouldPureComponentUpdate from 'react-pure-render/function';
 import CloseButton from './CloseButton';
 
 export default class Tab extends Component {
+
+    shouldComponentUpdate = shouldPureComponentUpdate;
 
     static propTypes = {
         imgSrc: PropTypes.string,

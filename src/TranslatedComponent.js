@@ -1,7 +1,10 @@
 import React, { PropTypes, Component } from 'react';
+import shouldPureComponentUpdate from 'react-pure-render/function';
 import { FormattedMessage } from 'react-intl';
 
 export default class TranslatedComponent extends Component {
+
+	shouldComponentUpdate = shouldPureComponentUpdate;
 
 	static propTypes = {
 		component: PropTypes.string.isRequired,
