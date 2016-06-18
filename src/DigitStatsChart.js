@@ -25,7 +25,6 @@ export default class DigitStatsChart extends Component {
 					<div key={i} className="digit-stats-col">
 						<div
 							className="digit-stats-percentage"
-							style={{ flex: 100 - x / max * 100 }}
 						>
 							{x.toFixed(2)}%
 						</div>
@@ -33,7 +32,7 @@ export default class DigitStatsChart extends Component {
 							className={'digit-stats-bar'
 								+ (x === max ? ' max' : '')
 								+ (x === min ? ' min' : '')}
-							style={{ flex: x / max * 100 }}
+							style={{ transform: `scale(${x / max}, 1)` }}
 						/>
 						<div className="digit-stats-digit">{i}</div>
 					</div>
