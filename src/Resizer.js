@@ -21,8 +21,8 @@ export default class Resizer extends Component {
 
 	onGlobalMouseUp = e => {
 		this.props.onResize(e);
-		window.removeEventListener('mousemove', this.mousemove);
-		window.removeEventListener('mouseup', this.mouseup);
+		window.removeEventListener('mousemove', this.onGlobalMouseMove);
+		window.removeEventListener('mouseup', this.onGlobalMouseUp);
 	}
 
 	render() {
