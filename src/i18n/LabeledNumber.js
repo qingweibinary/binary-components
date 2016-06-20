@@ -18,10 +18,9 @@ export default class LabeledNumber extends Component {
         return (
             <div id={id} className={'name-val-pair'}>
                 <M className={'name'} id={label + ':'} m={label + ':'} />
-                {
-                    isProfit ?
-                        <NumberColored {...this.props} /> :
-                        <NumberPlain {...this.props} />
+                {isProfit ?
+                    <NumberColored {...this.props} /> :
+                    <NumberPlain {...this.props} />
                 }
             </div>
         );

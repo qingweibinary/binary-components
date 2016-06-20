@@ -2,7 +2,7 @@ import { configure } from '@kadira/storybook';
 
 configure(() => {
     require('./inputs');
-    require('./translated');
+    require('./i18n');
     require('./graphical');
     require('./misc');
 }, module);

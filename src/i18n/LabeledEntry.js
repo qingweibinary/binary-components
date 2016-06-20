@@ -3,6 +3,7 @@ import LabeledText from './LabeledText';
 import LabeledNumber from './LabeledNumber';
 
 export default class LabeledEntry extends Component {
+
     static defaultProps = {
         value: 'N/A',
     };

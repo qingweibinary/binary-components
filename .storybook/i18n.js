@@ -1,13 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { IntlProvider } from 'react-intl';
-import M from '../src/M';
-import Button from '../src/Button';
+import M from '../src/i18n/M';
+import Button from '../src/i18n/Button';
 import DirectionAndValue from '../src/DirectionAndValue';
-import Label from '../src/Label';
-import ErrorMsg from '../src/ErrorMsg';
+import Label from '../src/i18n/Label';
+import ErrorMsg from '../src/i18n/ErrorMsg';
+import Th from '../src/i18n/Th';
+import Td from '../src/i18n/Td';
 
-storiesOf('Translated', module)
+storiesOf('i18n', module)
     .add('M', () =>
         <IntlProvider locale="en">
             <M m="Trade" />
@@ -35,5 +37,21 @@ storiesOf('Translated', module)
                 <DirectionAndValue value={150} />
                 <DirectionAndValue diff={1} value={150} />
             </div>
+        </IntlProvider>
+    )
+    .add('Table', () =>
+        <IntlProvider locale="en">
+            <table>
+                <thead>
+                    <tr>
+                        <Th text="Head" />
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <Td text="Text" />
+                    </tr>
+                </tbody>
+            </table>
         </IntlProvider>
     );
