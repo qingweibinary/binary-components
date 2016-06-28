@@ -17,8 +17,8 @@ storiesOf('Misc', module)
         <FormattedDateRange />
     )
     .add('TabList', () =>
-        <TabList>
-            <Tab />
-            <Tab />
+        <TabList onChange={e => window.console.log(e)}>
+            <Tab text="First Tab" />
+            <Tab text="Second Tab" />
         </TabList>
     );

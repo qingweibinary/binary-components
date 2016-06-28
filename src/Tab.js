@@ -8,11 +8,12 @@ export default class Tab extends Component {
 
     static propTypes = {
         imgSrc: PropTypes.string,
+        index: PropTypes.number,
         selected: PropTypes.bool,
         showIcon: PropTypes.bool,
         showText: PropTypes.bool,
         text: PropTypes.string,
-        onClick: PropTypes.func,
+        onSelect: PropTypes.func,
         closable: PropTypes.bool,
         onClose: PropTypes.func,
     };
@@ -23,14 +24,17 @@ export default class Tab extends Component {
         closable: false,
     };
 
+    onClick = () =>
+        this.props.onSelect(this.props.index);
+
     render() {
-        const { imgSrc, selected, showIcon, showText, text, onClick, onClose, closable } = this.props;
+        const { imgSrc, selected, showIcon, showText, text, onClose, closable } = this.props;
 
         return (
             <div
                 role="tab"
                 aria-selected={selected}
-                onClick={onClick}
+                onClick={this.onClick}
                 title={text}
             >
                 {showIcon && imgSrc && <img src={imgSrc} role="presentation" />}

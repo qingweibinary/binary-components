@@ -36,7 +36,7 @@ export default class TabList extends Component {
         this.setState({ activeIndex: nextProps.activeIndex });
     }
 
-    tabSelected(index) {
+    tabSelected = (index) => {
         const { onChange } = this.props;
         onChange(index);
         this.setState({ activeIndex: index });
@@ -52,12 +52,13 @@ export default class TabList extends Component {
                 role="tablist"
                 className={(vertical ? 'vertical ' : '') + className}
             >
-                {React.Children.map(this.props.children, (child, idx) =>
+                {React.Children.map(this.props.children, (child, index) =>
                     child && React.cloneElement(child, {
-                        selected: activeIndex === idx,
+                        selected: activeIndex === index,
                         showIcon: showIcons,
                         showText,
-                        onClick: () => this.tabSelected(idx),
+                        index,
+                        onSelect: this.tabSelected,
                     })
                 )}
             </div>
