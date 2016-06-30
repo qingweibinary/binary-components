@@ -4,6 +4,7 @@ import { IntlProvider } from 'react-intl';
 import M from '../src/i18n/M';
 import Button from '../src/i18n/Button';
 import DirectionAndValue from '../src/DirectionAndValue';
+import FormattedDateRange from '../src/FormattedDateRange';
 import Label from '../src/i18n/Label';
 import ErrorMsg from '../src/i18n/ErrorMsg';
 import Th from '../src/i18n/Th';
@@ -53,5 +54,10 @@ storiesOf('i18n', module)
                     </tr>
                 </tbody>
             </table>
+        </IntlProvider>
+    )
+    .add('FormattedDateRange', () =>
+        <IntlProvider locale="en">
+            <FormattedDateRange fromDate={new Date()} toDate={new Date()} />
         </IntlProvider>
     );

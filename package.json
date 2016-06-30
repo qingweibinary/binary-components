@@ -1,6 +1,6 @@
 {
   "name": "binary-components",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "React Components for Binary.com Apps",
   "main": "lib/",
   "scripts": {
@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/binary-com/binary-components#readme",
   "peerDependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^15.2.0-rc.1",
+    "react-dom": "^15.2.0-rc.1",
     "react-intl": "^2.1.2",
     "react-pure-render": "^1.0.2"
   },
@@ -60,9 +60,9 @@
     "gulp-babel": "^6.1.2",
     "gulp-flatten": "^0.2.0",
     "mocha": "^2.5.3",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^15.2.0-rc.1",
+    "react-addons-test-utils": "^15.2.0-rc.1",
+    "react-dom": "^15.2.0-rc.1",
     "react-intl": "^2.1.2",
     "react-pure-render": "^1.0.2"
   },

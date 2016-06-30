@@ -7,6 +7,8 @@ export default class M extends Component {
 	shouldComponentUpdate = shouldPureComponentUpdate;
 
 	static propTypes = {
+		id: PropTypes.string,
+		className: PropTypes.string,
 		m: PropTypes.string,
 		values: PropTypes.object,
 	};
@@ -16,12 +18,12 @@ export default class M extends Component {
 	};
 
 	render() {
-		const { m, values } = this.props;
+		const { m, values, id, className } = this.props;
 
 		return (
 			<FormattedMessage id={m} defaultMessage={m} values={values}>
 				{message =>
-					<span {...this.props}>
+					<span id={id} className={className}>
 						{message}
 					</span>
 				}

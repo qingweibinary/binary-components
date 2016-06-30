@@ -6,7 +6,7 @@ import NumberPlain from './NumberPlain';
 export default class DirectionAndValue extends Component {
 
 	static propTypes = {
-		diff: PropTypes.number.isRequired,
+		diff: PropTypes.number,
 		value: PropTypes.number.isRequired,
 	};
 
