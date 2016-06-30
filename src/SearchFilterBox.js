@@ -36,7 +36,6 @@ export default class SearchFilterBox extends Component {
         return (
             <div>
                 <InputGroup
-                    autoFocus
                     type="text"
                     placeholder="Keyword to search"
                     value={searchString}

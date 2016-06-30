@@ -1,11 +1,10 @@
 import React, { PropTypes, Component } from 'react';
-import M from './M';
+import M from './i18n/M';
 
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 
 export default class InputGroup extends Component {
 	static propTypes = {
-		autoFocus: PropTypes.bool,
 		type: PropTypes.string,
 		id: PropTypes.string,
 		className: PropTypes.string,
@@ -24,7 +23,7 @@ export default class InputGroup extends Component {
 	};
 
 	render() {
-		const { autoFocus, id, className, label, type, hint, value, min, max, list,
+		const { id, className, label, type, hint, value, min, max, list,
 			readOnly, placeholder, onChange, autoComplete, defaultValue, step } = this.props;
 
 		return (
@@ -33,7 +32,6 @@ export default class InputGroup extends Component {
 					<M m={label} />
 				</label>}
 				<input
-					autoFocus={autoFocus}
 					id={id}
 					type={type}
 					value={value}
