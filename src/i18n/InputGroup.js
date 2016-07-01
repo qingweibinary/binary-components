@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import M from './i18n/M';
+import M from './M';
 
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 

@@ -18,7 +18,7 @@ storiesOf('i18n', module)
     )
     .add('Button', () =>
         <IntlProvider locale="en">
-            <Button className="some-class" text="Trade" />
+            <Button className="some-class" text="Trade" onClick={() => alert('hello')} />
         </IntlProvider>
     )
     .add('Label', () =>

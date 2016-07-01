@@ -7,8 +7,6 @@ export default class TranslatedComponent extends Component {
 	shouldComponentUpdate = shouldPureComponentUpdate;
 
 	static propTypes = {
-		id: PropTypes.string,
-		className: PropTypes.string,
 		component: PropTypes.string.isRequired,
 		text: PropTypes.string,
 	};
@@ -18,11 +16,11 @@ export default class TranslatedComponent extends Component {
 	};
 
 	render() {
-		const { component, text, id, className } = this.props;
+		const { component, text, ...rest } = this.props;
 
 		return (
 			<FormattedMessage id={text} defaultMessage={text}>
-				{message => React.createElement(component, { id, className }, [message])}
+				{message => React.createElement(component, rest, [message])}
 			</FormattedMessage>
 		);
 	}
