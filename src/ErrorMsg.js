@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import classnames from 'classnames';
 import errorToString from 'binary-utils/lib/errorToString';
-import M from './M';
 
 export default class ErrorMsg extends Component {
 
@@ -19,9 +19,13 @@ export default class ErrorMsg extends Component {
 		if (!text) return null;
 
 		return (
-			<p className={classnames('errorfield', className)}>
-				<M m={errorToString(text)} />
-			</p>
+			<FormattedMessage id={text} defaultMessage={text}>
+				{message =>
+					<p className={classnames('errorfield', className)}>
+						{errorToString(message)}
+					</p>
+				}
+			</FormattedMessage>
 		);
 	}
 }
