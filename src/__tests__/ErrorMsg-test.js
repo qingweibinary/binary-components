@@ -11,6 +11,6 @@ describe('<ErrorMsg />', () => {
 
     it('renders FormattedMessage', () => {
         const wrapper = shallow(<ErrorMsg className="someClass" text="some" />);
-        expect(wrapper.props().className).to.include('someClass');
+        expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
     });
 });
