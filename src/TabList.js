@@ -36,7 +36,7 @@ export default class TabList extends Component {
         this.setState({ activeIndex: nextProps.activeIndex });
     }
 
-    tabSelected = (index) => {
+    onTabSelected = index => {
         const { onChange } = this.props;
         onChange(index);
         this.setState({ activeIndex: index });
@@ -58,7 +58,7 @@ export default class TabList extends Component {
                         showIcon: showIcons,
                         showText,
                         index,
-                        onSelect: this.tabSelected,
+                        onClick: () => this.onTabSelected(index),
                     })
                 )}
             </div>

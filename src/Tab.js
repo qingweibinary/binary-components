@@ -13,7 +13,6 @@ export default class Tab extends Component {
         showIcon: PropTypes.bool,
         showText: PropTypes.bool,
         text: PropTypes.string,
-        onSelect: PropTypes.func,
         closable: PropTypes.bool,
         onClose: PropTypes.func,
     };
@@ -23,9 +22,6 @@ export default class Tab extends Component {
         showIcon: true,
         closable: false,
     };
-
-    onClick = () =>
-        this.props.onSelect(this.props.index);
 
     render() {
         const { imgSrc, selected, showIcon, showText, text, onClose, closable } = this.props;
