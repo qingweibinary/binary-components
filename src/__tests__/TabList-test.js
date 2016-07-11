@@ -43,7 +43,6 @@ describe('<TabList />', () => {
                 <Tab />
             </TabList>
         );
-        console.log(wrapper.find('Tab').length);
         wrapper.find('Tab').simulate('click');
         expect(onTabClick).to.have.property('callCount', 1);
     });

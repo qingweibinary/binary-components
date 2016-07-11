@@ -14,6 +14,7 @@ export default class Tab extends Component {
         showText: PropTypes.bool,
         text: PropTypes.string,
         closable: PropTypes.bool,
+        onClick: PropTypes.func,
         onClose: PropTypes.func,
     };
 
@@ -30,8 +31,8 @@ export default class Tab extends Component {
             <div
                 role="tab"
                 aria-selected={selected}
-                onClick={this.onClick}
                 title={text}
+                onClick={this.props.onClick}
             >
                 {showIcon && imgSrc && <img src={imgSrc} role="presentation" />}
                 {showText && text && <span>{text}</span>}
