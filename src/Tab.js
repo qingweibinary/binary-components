@@ -36,7 +36,7 @@ export default class Tab extends Component {
                 onClick={this.props.onClick}
             >
                 {showIcon && imgSrc && <img src={imgSrc} role="presentation" />}
-                {showText && text && <M m={m} />}
+                {showText && text && <M m={text} />}
                 {closable && <CloseButton onClick={onClose} />}
             </div>
         );
