@@ -9,14 +9,9 @@ describe('<Tab />', () => {
         expect(wrapper).to.be.ok;
     });
 
-    it('should render the "text" property inside', () => {
+    it('should render M component inside', () => {
         const wrapper = shallow(<Tab text="Hello" />);
-        expect(wrapper.text()).to.equal('Hello');
-    });
-
-    it('should not render "text" property if showText is false', () => {
-        const wrapper = shallow(<Tab text="Hello" showText={false} />);
-        expect(wrapper.text()).to.equal('');
+        expect(wrapper.find('M')).to.have.lengthOf(1);
     });
 
     it('should render a close button when closable is true', () => {
