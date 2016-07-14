@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import CloseButton from './CloseButton';
+import M from './M';
 
 export default class Tab extends Component {
 
@@ -35,7 +36,7 @@ export default class Tab extends Component {
                 onClick={this.props.onClick}
             >
                 {showIcon && imgSrc && <img src={imgSrc} role="presentation" />}
-                {showText && text && <span>{text}</span>}
+                {showText && text && <M m={text} />}
                 {closable && <CloseButton onClick={onClose} />}
             </div>
         );
