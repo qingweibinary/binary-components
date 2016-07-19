@@ -18,8 +18,8 @@ export default class LabeledText extends Component {
 
         return (
             <div id={id} className={'name-val-pair'}>
-                <M className={'name'} id={label + ':'} m={label + ':'} />
-                <M className={'val'} id={value} m={value} />
+                <M className={'name'} m={label} />
+                <span className={'val'}>{value}</span>
             </div>
         );
     }
