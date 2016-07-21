@@ -14,26 +14,42 @@ export default class NumericInput extends Component {
 
     static defaultProps = {
         step: 10,
-        value: 0,
         valueList: [],
         onChange: () => {},
     };
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: props.value,
+        };
+    }
+
     onStepUp = () => {
-        const { step, value, onChange } = this.props;
+        const { step, onChange } = this.props;
+        const { value } = this.state;
         const newValue = +value + step;
+        this.setState({ value: newValue});
         onChange({ target: { value: newValue } });
     }
 
     onStepDown = () => {
-        const { step, value, onChange } = this.props;
+        const { step, onChange } = this.props;
+        const { value } = this.state;
         const newValue = +value - step;
+        this.setState({ value: newValue});
         onChange({ target: { value: newValue } });
     }
 
-    render() {
-        const { className, step, min, max, value, valueList, onChange } = this.props;
+    onChange = e => {
+        this.setState({ value: e.target.value });
+        e.persist();
+        this.props.onChange(e);
+    }
 
+    render() {
+        const { className, step, min, max, valueList } = this.props;
+        const { value } = this.state;
         return (
             <div className={className}>
                 <button className="btn-flat step-down" onClick={this.onStepDown}>&ndash;</button>
@@ -44,7 +60,7 @@ export default class NumericInput extends Component {
                     max={max}
                     step={step}
                     list="values"
-                    onChange={onChange}
+                    onChange={this.onChange}
                 />
                 <button className="btn-flat step-up" onClick={this.onStepUp}>+</button>
                 <datalist id="values">
