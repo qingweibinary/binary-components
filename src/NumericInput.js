@@ -4,6 +4,7 @@ export default class NumericInput extends Component {
 
     static propTypes = {
         className: PropTypes.string,
+        decimal: PropTypes.number,
         min: PropTypes.number,
         max: PropTypes.number,
         step: PropTypes.number,
@@ -13,6 +14,7 @@ export default class NumericInput extends Component {
     };
 
     static defaultProps = {
+        decimal: 2,
         step: 10,
         valueList: [],
         onChange: () => {},
@@ -26,18 +28,18 @@ export default class NumericInput extends Component {
     }
 
     onStepUp = () => {
-        const { step, onChange } = this.props;
+        const { step, decimal, onChange } = this.props;
         const { value } = this.state;
-        const newValue = +value + step;
-        this.setState({ value: newValue});
+        const newValue = +(+value + step).toFixed(decimal);
+        this.setState({ value: newValue });
         onChange({ target: { value: newValue } });
     }
 
     onStepDown = () => {
-        const { step, onChange } = this.props;
+        const { step, onChange, decimal } = this.props;
         const { value } = this.state;
-        const newValue = +value - step;
-        this.setState({ value: newValue});
+        const newValue = +(+value - step).toFixed(decimal);
+        this.setState({ value: newValue });
         onChange({ target: { value: newValue } });
     }
 
