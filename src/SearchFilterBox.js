@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import InputGroup from './InputGroup';
 
-export default class SearchFilterBox extends Component {
+export default class SearchFilterBox extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

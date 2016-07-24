@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
-export default class DobDay extends Component {
+export default class DobDay extends PureComponent {
 
 	static propTypes = {
 		day: PropTypes.number.isRequired,

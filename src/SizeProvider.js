@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class SizeProvider extends Component {
+export default class SizeProvider extends PureComponent {
 
     static propTypes = {
         children: React.PropTypes.object,

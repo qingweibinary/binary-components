@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import NumberPlain from './NumberPlain';
 import NumberColored from './NumberColored';
 
-export default class Number extends Component {
+export default class Number extends PureComponent {
     static propTypes = {
         value: PropTypes.any,
         currency: PropTypes.any,

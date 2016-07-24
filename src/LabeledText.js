@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import M from './M';
 
-export default class LabeledText extends Component {
+export default class LabeledText extends PureComponent {
 
     static defaultProps = {
         value: 'N/A',

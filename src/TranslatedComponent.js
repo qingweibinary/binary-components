@@ -1,8 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import { FormattedMessage } from 'react-intl';
 
-export default class TranslatedComponent extends Component {
+export default class TranslatedComponent extends PureComponent {
 
 	shouldComponentUpdate = shouldPureComponentUpdate;
 
@@ -16,7 +16,7 @@ export default class TranslatedComponent extends Component {
 	};
 
 	render() {
-		const { component, text, ...rest } = this.props;
+		const { PureComponent, text, ...rest } = this.props;
 
 		return (
 			<FormattedMessage id={text} defaultMessage={text}>

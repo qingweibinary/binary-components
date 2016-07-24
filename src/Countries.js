@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
-export default class Countries extends Component {
+export default class Countries extends PureComponent {
 
 	static propTypes = {
 		value: PropTypes.string,

@@ -1,9 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class Star extends Component {
-
-    shouldComponentUpdate = shouldPureComponentUpdate;
+export default class Star extends PureComponent {
 
     static propTypes = {
 		on: PropTypes.bool,

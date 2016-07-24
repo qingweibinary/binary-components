@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import M from './M';
 
-export default class OpenCloseNotice extends Component {
+export default class OpenCloseNotice extends PureComponent {
 
     static propTypes = {
         isOpen: PropTypes.bool,

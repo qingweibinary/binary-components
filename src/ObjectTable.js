@@ -1,8 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import ObjectTableRow from './ObjectTableRow';
 import M from './M';
 
-export default class ObjectTable extends Component {
+export default class ObjectTable extends PureComponent {
 
 	static propTypes = {
 		object: PropTypes.object,

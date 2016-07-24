@@ -1,6 +1,6 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class RangeGroup extends Component {
+export default class RangeGroup extends PureComponent {
 
 	static propTypes = {
 		items: PropTypes.array,

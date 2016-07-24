@@ -1,8 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import M from './M';
 
-export default class RadioItem extends Component {
+export default class RadioItem extends PureComponent {
 
 	shouldComponentUpdate = shouldPureComponentUpdate;
 

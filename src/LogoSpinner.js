@@ -1,6 +1,6 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class LogoSpinner extends Component {
+export default class LogoSpinner extends PureComponent {
 
 	static propTypes = {
 		spinning: PropTypes.bool,

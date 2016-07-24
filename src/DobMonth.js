@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
 const MONTHS = [
 	'January',
@@ -15,7 +15,7 @@ const MONTHS = [
 	'December',
 ];
 
-export default class DobMonth extends Component {
+export default class DobMonth extends PureComponent {
 
 	static propTypes = {
 		month: PropTypes.number,

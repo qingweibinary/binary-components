@@ -1,6 +1,6 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class NumericInput extends Component {
+export default class NumericInput extends PureComponent {
 
     static propTypes = {
         className: PropTypes.string,

@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
-export default class DobYear extends Component {
+export default class DobYear extends PureComponent {
 
 	static propTypes = {
 		year: PropTypes.number,

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class CloseButton extends Component {
+export default class CloseButton extends PureComponent {
 
     shouldComponentUpdate = () => false;
 

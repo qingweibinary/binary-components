@@ -1,8 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import LabeledText from './LabeledText';
 import LabeledNumber from './LabeledNumber';
 
-export default class LabeledEntry extends Component {
+export default class LabeledEntry extends PureComponent {
 
     static defaultProps = {
         value: 'N/A',

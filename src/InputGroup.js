@@ -1,9 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
 import M from './M';
 
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 
-export default class InputGroup extends Component {
+export default class InputGroup extends PureComponent {
 	static propTypes = {
 		type: PropTypes.string,
 		id: PropTypes.string,
@@ -31,20 +32,24 @@ export default class InputGroup extends Component {
 				{label && <label htmlFor={id}>
 					<M m={label} />
 				</label>}
-				<input
-					id={id}
-					type={type}
-					value={value}
-					step={step}
-					list={list}
-					defaultValue={defaultValue}
-					readOnly={readOnly}
-					placeholder={placeholder}
-					onChange={onChange}
-					min={min}
-					max={max}
-					autoComplete={autoComplete}
-				/>
+				<FormattedMessage id={placeholder} defaultMessage={placeholder}>
+					{message =>
+						<input
+							id={id}
+							type={type}
+							value={value}
+							step={step}
+							list={list}
+							defaultValue={defaultValue}
+							readOnly={readOnly}
+							placeholder={message}
+							onChange={onChange}
+							min={min}
+							max={max}
+							autoComplete={autoComplete}
+						/>
+					}
+				</FormattedMessage>
 				{hint && <p className="hint">
 					<M m={hint} />
 				</p>}

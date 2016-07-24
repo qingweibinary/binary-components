@@ -1,10 +1,8 @@
-import React, { PropTypes, Component } from 'react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+import React, { PropTypes, PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
 import M from './M';
 
-export default class SelectGroup extends Component {
-
-	shouldComponentUpdate = shouldPureComponentUpdate;
+export default class SelectGroup extends PureComponent {
 
 	static propTypes = {
 		hint: PropTypes.string,
@@ -32,14 +30,20 @@ export default class SelectGroup extends Component {
 				{label && <label htmlFor={id}>
 					<M m={label} />
 				</label>}
-				<select id={id} readOnly={readOnly} placeholder={placeholder} onChange={onChange} value={value}>
-					{options.map(o => <option key={o.value} value={o.value}>{o.text}</option>)}
-					{Object.keys(optgroups).map(grp =>
-						<optgroup key={grp} label={grp}>
-							{optgroups[grp].map(o => <option key={o.value} value={o.value}>{o.text}</option>)}
-						</optgroup>
-					)}
-				</select>
+				<FormattedMessage id={placeholder} defaultMessage={placeholder}>
+					{message =>
+						<select id={id} readOnly={readOnly} placeholder={message} onChange={onChange} value={value}>
+							{options.map(o => <option key={o.value} value={o.value}>{o.text}</option>)}
+							{Object.keys(optgroups).map(grp =>
+								<optgroup key={grp} label={grp}>
+									{optgroups[grp].map(o =>
+										<option key={o.value} value={o.value}>{o.text}</option>)
+									}
+								</optgroup>
+							)}
+						</select>
+					}
+				</FormattedMessage>
 				{hint && <p className="hint">{hint}</p>}
 			</fieldset>
 		);

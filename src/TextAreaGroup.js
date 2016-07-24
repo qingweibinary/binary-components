@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import M from './M';
 
-export default class TextAreaGroup extends Component {
+export default class TextAreaGroup extends PureComponent {
 
     static propTypes = {
         id: PropTypes.string,

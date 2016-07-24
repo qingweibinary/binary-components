@@ -1,8 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import RadioItem from './RadioItem';
-import shouldPureComponentUpdate from 'react-pure-render/function';
 
-export default class RadioGroup extends Component {
+export default class RadioGroup extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,
@@ -17,8 +16,6 @@ export default class RadioGroup extends Component {
 	static defaultProps = {
 		className: 'radio-selector',
 	};
-
-	shouldComponentUpdate = shouldPureComponentUpdate;
 
 	render() {
 		const { className, onChange, name, options, value } = this.props;

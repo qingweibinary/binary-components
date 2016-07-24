@@ -1,9 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import NumberPlain from './NumberPlain';
 import NumberColored from './NumberColored';
 import M from './M';
 
-export default class LabeledNumber extends Component {
+export default class LabeledNumber extends PureComponent {
     static propTypes = {
         id: PropTypes.string,
         label: PropTypes.string.isRequired,

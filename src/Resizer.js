@@ -1,9 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class Resizer extends Component {
-
-	shouldComponentUpdate = shouldPureComponentUpdate;
+export default class Resizer extends PureComponent {
 
 	static propTypes = {
 		onResize: PropTypes.func.isRequired,

@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import DobDay from './DobDay';
 import DobMonth from './DobMonth';
 import DobYear from './DobYear';
 
-export default class DateOfBirth extends Component {
+export default class DateOfBirth extends PureComponent {
 
 	static propTypes = {
 		date: PropTypes.instanceOf(Date),

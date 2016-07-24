@@ -1,12 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import shouldPureComponentUpdate from 'react-pure-render/function';
 import classnames from 'classnames';
 import errorToString from 'binary-utils/lib/errorToString';
 
-export default class ErrorMsg extends Component {
-
-	shouldComponentUpdate = shouldPureComponentUpdate;
+export default class ErrorMsg extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,

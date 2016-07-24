@@ -1,9 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import directionClassName from 'binary-utils/lib/directionClassName';
 import Direction from './Direction';
 import NumberPlain from './NumberPlain';
 
-export default class DirectionAndValue extends Component {
+export default class DirectionAndValue extends PureComponent {
 
 	static propTypes = {
 		diff: PropTypes.number,

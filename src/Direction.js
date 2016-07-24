@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
 const DirectionNone = ({ width, height }) =>
 	<rect
@@ -34,7 +34,7 @@ const getDirectionComponent = diff => {
 	}
 };
 
-export default class Direction extends Component {
+export default class Direction extends PureComponent {
 
 	static propTypes = {
 		diff: PropTypes.number,

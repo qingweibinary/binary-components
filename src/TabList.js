@@ -1,9 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+import React, { PropTypes, PureComponent } from 'react';
 
-export default class TabList extends Component {
-
-    shouldComponentUpdate = shouldPureComponentUpdate;
+export default class TabList extends PureComponent {
 
     static propTypes = {
         id: PropTypes.string,

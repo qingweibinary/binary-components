@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import arrayMin from 'binary-utils/lib/arrayMin';
 import arrayMax from 'binary-utils/lib/arrayMax';
 
-export default class DigitStatsChart extends Component {
+export default class DigitStatsChart extends PureComponent {
 
 	static propTypes = {
 		orientation: PropTypes.string,
