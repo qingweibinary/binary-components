@@ -1,11 +1,8 @@
 import React, { PropTypes, PureComponent } from 'react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
 import CloseButton from './CloseButton';
 import M from './M';
 
 export default class Tab extends PureComponent {
-
-    shouldComponentUpdate = shouldPureComponentUpdate;
 
     static propTypes = {
         imgSrc: PropTypes.string,

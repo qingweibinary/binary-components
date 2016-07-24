@@ -6,12 +6,8 @@ export default class M extends PureComponent {
 	static propTypes = {
 		id: PropTypes.string,
 		className: PropTypes.string,
-		m: PropTypes.string,
+		m: PropTypes.string.isRequired,
 		values: PropTypes.object,
-	};
-
-	static defaultProps = {
-		m: '',
 	};
 
 	render() {

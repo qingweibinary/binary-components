@@ -5,6 +5,7 @@ import M from './M';
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 
 export default class InputGroup extends PureComponent {
+
 	static propTypes = {
 		type: PropTypes.string,
 		id: PropTypes.string,
@@ -24,32 +25,21 @@ export default class InputGroup extends PureComponent {
 	};
 
 	render() {
-		const { id, className, label, type, hint, value, min, max, list,
-			readOnly, placeholder, onChange, autoComplete, defaultValue, step } = this.props;
+		const { label, className, hint, id, placeholder, ...rest } = this.props;
 
 		return (
 			<fieldset className={className}>
 				{label && <label htmlFor={id}>
 					<M m={label} />
 				</label>}
-				<FormattedMessage id={placeholder} defaultMessage={placeholder}>
-					{message =>
-						<input
-							id={id}
-							type={type}
-							value={value}
-							step={step}
-							list={list}
-							defaultValue={defaultValue}
-							readOnly={readOnly}
-							placeholder={message}
-							onChange={onChange}
-							min={min}
-							max={max}
-							autoComplete={autoComplete}
-						/>
-					}
-				</FormattedMessage>
+				{placeholder ?
+					<FormattedMessage id={placeholder} defaultMessage={placeholder}>
+						{message =>
+							<input id={id} placeholder={message} {...rest} />
+						}
+					</FormattedMessage> :
+					<input id={id} {...rest} />
+				}
 				{hint && <p className="hint">
 					<M m={hint} />
 				</p>}

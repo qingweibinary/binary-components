@@ -10,7 +10,6 @@ import ErrorMsg from '../src/ErrorMsg';
 import Th from '../src/Th';
 import Td from '../src/Td';
 import InputGroup from '../src/InputGroup';
-import SelectGroup from '../src/SelectGroup';
 
 
 storiesOf('i18n', module)
@@ -68,14 +67,6 @@ storiesOf('i18n', module)
         <IntlProvider locale="en">
             <InputGroup
                 type="text"
-                label="Some label"
-                placeholder="Some placeholder"
-            />
-        </IntlProvider>
-    )
-    .add('SelectGroup', () =>
-        <IntlProvider locale="en">
-            <SelectGroup
                 label="Some label"
                 placeholder="Some placeholder"
             />
