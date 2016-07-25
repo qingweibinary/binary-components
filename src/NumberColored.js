@@ -9,6 +9,7 @@ export default class NumberColored extends PureComponent {
 		value: PropTypes.any,
 		currency: PropTypes.any,
 		isProfit: PropTypes.func,
+		digits: PropTypes.number,
 		className: PropTypes.string,
 	};
 
@@ -17,11 +18,11 @@ export default class NumberColored extends PureComponent {
 	};
 
 	render() {
-		const { value, currency, isProfit, className } = this.props;
+		const { value, currency, digits, isProfit, className } = this.props;
 		const classes = classnames(directionClassName(isProfit(value)), className);
 
 		return (
-			<NumberPlain className={classes} value={value} currency={currency} />
+			<NumberPlain className={classes} value={value} currency={currency} digits={digits} />
 		);
 	}
 }
