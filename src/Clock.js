@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
-import dateToGMTString from 'binary-utils/lib/dateToGMTString';
+import { dateToGMTString } from 'binary-utils';
 
 export default class Clock extends PureComponent {
 

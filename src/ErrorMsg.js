@@ -1,7 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import classnames from 'classnames';
-import errorToString from 'binary-utils/lib/errorToString';
+import { errorToString } from 'binary-utils';
 
 export default class ErrorMsg extends PureComponent {
 

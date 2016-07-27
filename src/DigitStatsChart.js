@@ -1,6 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
-import arrayMin from 'binary-utils/lib/arrayMin';
-import arrayMax from 'binary-utils/lib/arrayMax';
+import { arrayMin, arrayMax } from 'binary-utils';
 
 export default class DigitStatsChart extends PureComponent {
 

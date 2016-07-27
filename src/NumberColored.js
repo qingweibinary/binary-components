@@ -1,7 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
 import NumberPlain from './NumberPlain';
-import directionClassName from 'binary-utils/lib/directionClassName';
+import { directionClassName } from 'binary-utils';
 
 export default class NumberColored extends PureComponent {
 
