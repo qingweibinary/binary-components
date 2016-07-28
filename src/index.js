@@ -41,6 +41,5 @@ export { default as SelectGroup } from './input/SelectGroup';
 export { default as Clock } from './misc/Clock';
 export { default as DigitStatsChart } from './misc/DigitStatsChart';
 export { default as Resizer } from './misc/Resizer';
-export { default as SizeProvider } from './misc/SizeProvider';
 export { default as Tab } from './misc/Tab';
 export { default as TabList } from './misc/TabList';
