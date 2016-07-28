@@ -29,10 +29,6 @@ export default class TabList extends PureComponent {
         };
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ activeIndex: nextProps.activeIndex });
-    }
-
     onTabSelected = index => {
         const { onChange } = this.props;
         onChange(index);

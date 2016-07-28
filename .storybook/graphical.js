@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import CloseButton from '../src/CloseButton';
-import Direction from '../src/Direction';
-import DownArrow from '../src/DownArrow';
-import Info from '../src/Info';
-import Logo from '../src/Logo';
-import LogoSpinner from '../src/LogoSpinner';
-import Star from '../src/Star';
+import CloseButton from '../src/graphical/CloseButton';
+import Direction from '../src/graphical/Direction';
+import DownArrow from '../src/graphical/DownArrow';
+import Info from '../src/graphical/Info';
+import Logo from '../src/graphical/Logo';
+import LogoSpinner from '../src/graphical/LogoSpinner';
+import Star from '../src/graphical/Star';
 
 storiesOf('Graphical', module)
     .add('CloseButton', () =>

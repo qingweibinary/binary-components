@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { IntlProvider } from 'react-intl';
-import M from '../src/M';
-import Button from '../src/Button';
-import DirectionAndValue from '../src/DirectionAndValue';
-import FormattedDateRange from '../src/FormattedDateRange';
-import Label from '../src/Label';
-import ErrorMsg from '../src/ErrorMsg';
-import Th from '../src/Th';
-import Td from '../src/Td';
-import InputGroup from '../src/InputGroup';
+import M from '../src/i18n/M';
+import Button from '../src/i18n/Button';
+import DirectionAndValue from '../src/graphical/DirectionAndValue';
+import FormattedDateRange from '../src/i18n/FormattedDateRange';
+import Label from '../src/i18n/Label';
+import ErrorMsg from '../src/i18n/ErrorMsg';
+import Th from '../src/i18n/Th';
+import Td from '../src/i18n/Td';
+import InputGroup from '../src/input/InputGroup';
 
 
 storiesOf('i18n', module)
