@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
-import CloseButton from './CloseButton';
-import M from './M';
+import CloseButton from '../graphical/CloseButton';
+import M from '../i18n/M';
 
 export default class Tab extends PureComponent {
 

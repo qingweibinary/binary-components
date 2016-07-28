@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 
 export default class CloseButton extends PureComponent {
 
-    shouldComponentUpdate = () => false;
-
     render() {
         return (
             <a className="close-btn" {...this.props}>

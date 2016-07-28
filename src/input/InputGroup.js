@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import M from './M';
+import M from '../i18n/M';
 
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 

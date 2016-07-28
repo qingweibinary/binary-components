@@ -4,6 +4,9 @@ instrumentation:
   verbose: true
   excludes:
     - index.js
-    - __tests__/*.js
+    - graphical/__tests__/*.js
+    - i18n/__tests__/*.js
+    - input/__tests__/*.js
+    - misc/__tests__/*.js
 reporting:
   dir: "coverage"

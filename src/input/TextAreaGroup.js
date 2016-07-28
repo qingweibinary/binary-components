@@ -1,5 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
-import M from './M';
+import M from '../i18n/M';
 
 export default class TextAreaGroup extends PureComponent {
 

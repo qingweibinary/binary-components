@@ -1,7 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { directionClassName } from 'binary-utils';
 import Direction from './Direction';
-import NumberPlain from './NumberPlain';
+import NumberPlain from '../i18n/NumberPlain';
 
 export default class DirectionAndValue extends PureComponent {
 

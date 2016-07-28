@@ -3,6 +3,7 @@ import NumberPlain from './NumberPlain';
 import NumberColored from './NumberColored';
 
 export default class Number extends PureComponent {
+
     static propTypes = {
         value: PropTypes.any,
         currency: PropTypes.any,
