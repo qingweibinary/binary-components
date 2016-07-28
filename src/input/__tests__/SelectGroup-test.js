@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import SelectGroup from '../SelectGroup';
 
@@ -15,8 +15,8 @@ describe('<SelectGroup />', () => {
         expect(wrapper.props().className).to.equal('test-class');
     });
 
-    it.skip('passes id to select', () => {
-        const wrapper = shallow(<IntlProvider locale="en"><SelectGroup id="test-id" /></IntlProvider>);
-        expect(wrapper.find('select').props().id).to.equal('test-id');
+    it('passes id to select', () => {
+        const wrapper = render(<IntlProvider locale="en"><SelectGroup id="test-id" /></IntlProvider>);
+        expect(wrapper.find('#test-id')).to.have.length(1);
     });
 });
