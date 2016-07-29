@@ -49,7 +49,7 @@ export default class NumericInput extends PureComponent {
         this.props.onChange(e);
     }
 
-    componentWillUpdate(nProps, nState){
+    componentWillUpdate(nProps, nState) {
         if (this.state.value.length - nState.value.length === 2) {
             this.refs.input.value = '0' + nState.value;
         }
