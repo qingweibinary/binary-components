@@ -7,7 +7,7 @@ export default class RangeGroup extends PureComponent {
 		id: PropTypes.string,
 		label: PropTypes.string,
 		hint: PropTypes.string,
-		value: PropTypes.number,
+		defaultValue: PropTypes.number,
 		min: PropTypes.number,
 		max: PropTypes.number,
 		step: PropTypes.number,
@@ -16,19 +16,14 @@ export default class RangeGroup extends PureComponent {
 	};
 
 	render() {
-		const { id, label, hint, value, min, max, step, items, readOnly, onChange } = this.props;
+		const { id, label, hint, items, ...rest } = this.props;
 
 		return (
 			<div className="range-selector">
 				{label && <label htmlFor={id}>{label}</label>}
 				<input
 					type="range"
-					defaultValue={value}
-					readOnly={readOnly}
-					onChange={onChange}
-					min={min}
-					max={max}
-					step={step}
+					{...rest}
 				/>
 				<div className="range-selector-items">
 					{items.map(i => <label key={i}>{i}</label>)}

@@ -10,14 +10,13 @@ export default class NumericInput extends PureComponent {
         step: PropTypes.number,
         defaultValue: PropTypes.number,
         valueList: PropTypes.array,
-        onChange: PropTypes.func,
+        onChange: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
+        defaultValue: 0,
         decimals: 2,
         step: 10,
-        valueList: [],
-        onChange: () => {},
     };
 
     constructor(props) {
@@ -28,31 +27,23 @@ export default class NumericInput extends PureComponent {
     }
 
     onStepUp = () => {
-        const { step, decimals, onChange } = this.props;
+        const { step, decimals } = this.props;
         const { value } = this.state;
         const newValue = +((+value + step).toFixed(decimals));
-        this.setState({ value: newValue });
-        onChange({ target: { value: newValue } });
+        this.onChange({ target: { value: newValue } });
     }
 
     onStepDown = () => {
-        const { step, onChange, decimals } = this.props;
+        const { step, decimals } = this.props;
         const { value } = this.state;
         const newValue = +((+value - step).toFixed(decimals));
-        this.setState({ value: newValue });
-        onChange({ target: { value: newValue } });
+        this.onChange({ target: { value: newValue } });
     }
 
     onChange = e => {
         this.setState({ value: e.target.value });
-        e.persist();
+        // e.persist();
         this.props.onChange(e);
-    }
-
-    componentWillUpdate(nProps, nState) {
-        if (this.state.value.length - nState.value.length === 2) {
-            this.refs.input.value = '0' + nState.value;
-        }
     }
 
     render() {
@@ -72,11 +63,13 @@ export default class NumericInput extends PureComponent {
                     ref="input"
                 />
                 <button className="btn-flat step-up" onClick={this.onStepUp}>+</button>
-                <datalist id="values">
-                    {valueList.map(x =>
-                        <option key={x} value={x} />
-                    )}
-                </datalist>
+                {valueList &&
+                    <datalist id="values">
+                        {valueList.map(x =>
+                            <option key={x} value={x} />
+                        )}
+                    </datalist>
+                }
             </div>
         );
     }
