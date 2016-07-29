@@ -15,12 +15,13 @@ export default class RadioGroup extends PureComponent {
 
 	static defaultProps = {
 		className: 'radio-selector',
+		options: [],
 	};
 
 	render() {
 		const { className, onChange, name, options, value } = this.props;
 		return (
-			<div className={className}>
+			<fieldset className={className}>
 				{options.map(o =>
 					<RadioItem
 						key={name + o.value}
@@ -32,7 +33,7 @@ export default class RadioGroup extends PureComponent {
 						value={o.value}
 					/>
 				)}
-			</div>
+			</fieldset>
 		);
 	}
 }

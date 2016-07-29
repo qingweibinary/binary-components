@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import M from '../i18n/M';
+import Label from '../i18n/Label';
 
 const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
 
@@ -11,7 +11,6 @@ export default class InputGroup extends PureComponent {
 		id: PropTypes.string,
 		className: PropTypes.string,
 		label: PropTypes.string,
-		hint: PropTypes.string,
 		list: PropTypes.string,
 		defaultValue: PropTypes.oneOfType(valueTypes),
 		value: PropTypes.oneOfType(valueTypes),
@@ -25,13 +24,11 @@ export default class InputGroup extends PureComponent {
 	};
 
 	render() {
-		const { label, className, hint, id, placeholder, ...rest } = this.props;
+		const { label, className, id, placeholder, ...rest } = this.props;
 
 		return (
 			<fieldset className={className}>
-				{label && <label htmlFor={id}>
-					<M m={label} />
-				</label>}
+				{label && <Label htmlFor={id} text={label} />}
 				{placeholder ?
 					<FormattedMessage id={placeholder} defaultMessage={placeholder}>
 						{message =>
@@ -40,9 +37,6 @@ export default class InputGroup extends PureComponent {
 					</FormattedMessage> :
 					<input id={id} {...rest} />
 				}
-				{hint && <p className="hint">
-					<M m={hint} />
-				</p>}
 			</fieldset>
 		);
 	}

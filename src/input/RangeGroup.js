@@ -1,4 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
+import Label from '../i18n/Label';
 
 export default class RangeGroup extends PureComponent {
 
@@ -6,7 +7,6 @@ export default class RangeGroup extends PureComponent {
 		items: PropTypes.array,
 		id: PropTypes.string,
 		label: PropTypes.string,
-		hint: PropTypes.string,
 		defaultValue: PropTypes.number,
 		min: PropTypes.number,
 		max: PropTypes.number,
@@ -15,12 +15,16 @@ export default class RangeGroup extends PureComponent {
 		onChange: PropTypes.func,
 	};
 
+	static defaultProps = {
+		items: [],
+	};
+
 	render() {
-		const { id, label, hint, items, ...rest } = this.props;
+		const { id, label, items, ...rest } = this.props;
 
 		return (
-			<div className="range-selector">
-				{label && <label htmlFor={id}>{label}</label>}
+			<fieldset className="range-selector">
+				{label && <Label htmlFor={id} text={label} />}
 				<input
 					type="range"
 					{...rest}
@@ -28,8 +32,7 @@ export default class RangeGroup extends PureComponent {
 				<div className="range-selector-items">
 					{items.map(i => <label key={i}>{i}</label>)}
 				</div>
-				{hint && <p className="hint">{hint}</p>}
-			</div>
+			</fieldset>
 		);
 	}
 }
