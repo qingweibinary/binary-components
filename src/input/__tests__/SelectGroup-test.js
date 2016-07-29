@@ -16,7 +16,20 @@ describe('<SelectGroup />', () => {
     });
 
     it('passes id to select', () => {
-        const wrapper = render(<IntlProvider locale="en"><SelectGroup id="test-id" /></IntlProvider>);
+        const wrapper = render(
+            <IntlProvider locale="en">
+                <SelectGroup id="test-id" />
+            </IntlProvider>
+        );
         expect(wrapper.find('#test-id')).to.have.length(1);
+    });
+
+    it('can render options', () => {
+        const wrapper = render(
+            <IntlProvider locale="en">
+                <SelectGroup options={['option1', 'option2']} />
+            </IntlProvider>
+        );
+        expect(wrapper.find('option')).to.have.length(2);
     });
 });
