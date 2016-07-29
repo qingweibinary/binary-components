@@ -8,7 +8,7 @@ export default class NumericInput extends PureComponent {
         min: PropTypes.number,
         max: PropTypes.number,
         step: PropTypes.number,
-        value: PropTypes.number,
+        defaultValue: PropTypes.number,
         valueList: PropTypes.array,
         onChange: PropTypes.func,
     };
@@ -23,7 +23,7 @@ export default class NumericInput extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            value: props.value,
+            value: props.defaultValue,
         };
     }
 
