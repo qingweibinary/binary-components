@@ -13,7 +13,11 @@ export default class FormattedDateRange extends PureComponent {
 
 		return (
 			<span>
-				<FormattedDate value={fromDate} /> – <FormattedDate value={toDate} />
+				<FormattedDate value={fromDate} />
+				&nbps;
+				–
+				&nbsp;
+				<FormattedDate value={toDate} />
 			</span>
 		);
 	}

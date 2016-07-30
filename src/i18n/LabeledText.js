@@ -3,14 +3,14 @@ import M from './M';
 
 export default class LabeledText extends PureComponent {
 
-    static defaultProps = {
-        value: 'N/A',
-    };
-
     static propTypes = {
         id: PropTypes.string,
         label: PropTypes.string.isRequired,
         value: PropTypes.string,
+    };
+
+    static defaultProps = {
+        value: 'N/A',
     };
 
     render() {

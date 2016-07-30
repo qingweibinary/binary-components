@@ -12,10 +12,8 @@ export default class Number extends PureComponent {
 
     render() {
         const { isProfit } = this.props;
-        return (
-            isProfit ?
-                <NumberColored {...this.props} /> :
-                <NumberPlain {...this.props} />
-        );
+        return isProfit ?
+            <NumberColored {...this.props} /> :
+            <NumberPlain {...this.props} />;
     }
 }

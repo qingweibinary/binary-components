@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
 import { IntlProvider } from 'react-intl';
-import NoticeMsg from '../ErrorMsg';
+import NoticeMsg from '../NoticeMsg';
 
 describe('<NoticeMsg />', () => {
     it('does not render when no properties provided', () => {
