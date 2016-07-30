@@ -5,10 +5,10 @@ export default class RadioGroup extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,
-		name: PropTypes.string.isRequired,
+		name: PropTypes.string,
 		text: PropTypes.string,
 		img: PropTypes.string,
-		options: PropTypes.any.isRequired,
+		options: PropTypes.array,
 		onChange: PropTypes.func.isRequired,
 		value: PropTypes.any,
 	};

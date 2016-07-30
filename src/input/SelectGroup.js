@@ -1,5 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
-import M from '../i18n/M';
+import Label from '../i18n/Label';
 
 export default class SelectGroup extends PureComponent {
 
@@ -23,11 +23,11 @@ export default class SelectGroup extends PureComponent {
 
 		return (
 			<fieldset className={className}>
-				{label && <label htmlFor={id}>
-					<M m={label} />
-				</label>}
+				{label && <Label htmlFor={id} text={label} />}
 				<select id={id} readOnly={readOnly} onChange={onChange} value={value}>
-					{options.map(o => <option key={o.value} value={o.value}>{o.text}</option>)}
+					{options.map(o =>
+						<option key={o.value} value={o.value}>{o.text}</option>
+					)}
 				</select>
 				{hint && <p className="hint">{hint}</p>}
 			</fieldset>

@@ -7,7 +7,11 @@ export default class DirectionAndValue extends PureComponent {
 
 	static propTypes = {
 		diff: PropTypes.number,
-		value: PropTypes.number.isRequired,
+		value: PropTypes.number,
+	};
+
+	static defaultProps = {
+		value: 0,
 	};
 
 	render() {

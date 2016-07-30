@@ -6,26 +6,27 @@ export default class Countries extends PureComponent {
 		value: PropTypes.string,
 		onChange: PropTypes.func,
 		residenceList: PropTypes.array.isRequired,
-	}
+	};
+
+	static defaultProps = {
+		residenceList: [],
+	};
 
 	render() {
 		const { onChange, value, residenceList } = this.props;
 
 		return (
-			<select name="residence" onChange={this.onResidenceChange}>
+			<select name="residence" onChange={onChange} defaultValue={value}>
                 <option value="">Country of Residence</option>
-                 {
-                    residenceList.map((obj) =>
-                        <option
-                            value={obj.value}
-                            key={obj.value}
-                            disabled={obj.disabled ? 'disabled' : false}
-                        >
-                            {obj.text}
-                        </option>
-                     )
-                 }
-
+				{residenceList.map(x =>
+                    <option
+                        key={x.value}
+                        value={x.value}
+                        disabled={x.disabled}
+                    >
+                        {x.text}
+                    </option>
+                 )}
             </select>
 		);
 	}

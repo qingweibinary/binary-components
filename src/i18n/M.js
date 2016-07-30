@@ -6,7 +6,7 @@ export default class M extends PureComponent {
 	static propTypes = {
 		id: PropTypes.string,
 		className: PropTypes.string,
-		m: PropTypes.string.isRequired,
+		m: PropTypes.string,
 		values: PropTypes.object,
 	};
 

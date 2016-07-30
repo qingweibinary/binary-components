@@ -25,9 +25,10 @@ describe('<SelectGroup />', () => {
     });
 
     it('can render options', () => {
+        const options = [{ value: 'option1' }, { value: 'option2' }];
         const wrapper = render(
             <IntlProvider locale="en">
-                <SelectGroup options={['option1', 'option2']} />
+                <SelectGroup options={options} />
             </IntlProvider>
         );
         expect(wrapper.find('option')).to.have.length(2);
