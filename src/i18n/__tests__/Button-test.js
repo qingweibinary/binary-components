@@ -11,6 +11,6 @@ describe('<Button />', () => {
 
     it('renders TranslatedComponent', () => {
         const wrapper = shallow(<Button />);
-        expect(wrapper.find('TranslatedComponent')).to.have.lengthOf(1);
+        expect(wrapper.find('TranslatedComponent')).to.have.length(1);
     });
 });

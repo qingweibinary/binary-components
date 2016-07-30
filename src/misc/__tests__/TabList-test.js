@@ -13,7 +13,7 @@ describe('<TabList />', () => {
 
     it('should render a single item if contained', () => {
         const wrapper = shallow(<TabList>Hello</TabList>);
-        expect(wrapper.nodes).to.have.lengthOf(1);
+        expect(wrapper.nodes).to.have.length(1);
     });
 
     it('should render as many children as contained', () => {
@@ -24,7 +24,7 @@ describe('<TabList />', () => {
                 <span />
             </TabList>
         );
-        expect(wrapper.find('span')).to.have.lengthOf(3);
+        expect(wrapper.find('span')).to.have.length(3);
     });
 
     it('should set at least one child to selected', () => {
@@ -33,7 +33,7 @@ describe('<TabList />', () => {
                 <span />
             </TabList>
         );
-        expect(wrapper.find('span[selected]')).to.have.lengthOf(1);
+        expect(wrapper.find('span[selected]')).to.have.length(1);
     });
 
     it('wuut', () => {

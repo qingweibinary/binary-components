@@ -10,7 +10,7 @@ import Th from '../Th';
 import Td from '../Td';
 import Span from '../Span';
 
-describe('Translated components />', () => {
+describe('Translated components', () => {
     it('<TranslatedComponent /> can render', () => {
         const wrapper = shallow(<TranslatedComponent />);
         expect(wrapper.type()).to.not.equal(null);

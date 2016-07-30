@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 import M from '../M';
 
 describe('<M />', () => {
@@ -9,8 +10,17 @@ describe('<M />', () => {
         expect(wrapper.type()).to.not.equal(null);
     });
 
-    it('renders FormattedMessage', () => {
-        const wrapper = shallow(<M />);
-        expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
+    it('renders a translated span', () => {
+        const wrapper = render(
+            <IntlProvider locale="en">
+                <M m="someText" />
+             </IntlProvider>
+        );
+        expect(wrapper.find('span')).to.have.length(1);
+    });
+
+    it('can translate text', () => {
+        const wrapper = shallow(<M m="some text" />);
+        expect(wrapper.find('FormattedMessage')).to.have.length(1);
     });
 });

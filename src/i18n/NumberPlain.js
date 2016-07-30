@@ -18,11 +18,7 @@ export default class NumberPlain extends PureComponent {
 		const { currency, className, digits } = this.props;
 		const value = +this.props.value;
 
-		// if (value < 0) {
-			// formattedValue = '(' + formattedValue.substring(1) + ')';
-		// }
-
-		if (value === undefined) return null;
+		if (isNaN(value)) return null;
 
 		return (
 			<span className={className}>
