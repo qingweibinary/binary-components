@@ -23,7 +23,7 @@ export { default as P } from './i18n/P';
 export { default as Span } from './i18n/Span';
 export { default as Td } from './i18n/Td';
 export { default as Th } from './i18n/Th';
-export { default as WarningMsg } from './i18n/WarningMsg';
+export { default as NoticeMsg } from './i18n/NoticeMsg';
 
 export { default as Countries } from './input/Countries';
 export { default as DateOfBirth } from './input/DateOfBirth';
