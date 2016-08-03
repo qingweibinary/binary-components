@@ -30,7 +30,7 @@ export default class RangeGroup extends PureComponent {
 					{...rest}
 				/>
 				<div className="range-selector-items">
-					{items.map(i => <label key={i}>{i}</label>)}
+					{items.map(i => <span key={i}>{i}</span>)}
 				</div>
 			</fieldset>
 		);
