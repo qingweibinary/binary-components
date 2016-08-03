@@ -8,7 +8,7 @@ export { default as LogoSpinner } from './graphical/LogoSpinner';
 export { default as Star } from './graphical/Star';
 
 export { default as Button } from './i18n/Button';
-export { default as ErrorMsg } from './i18n/ErrorMsg';
+export { default as Error } from './i18n/Error';
 export { default as FormattedDateRange } from './i18n/FormattedDateRange';
 export { default as Label } from './i18n/Label';
 export { default as Legend } from './i18n/Legend';
@@ -23,7 +23,7 @@ export { default as P } from './i18n/P';
 export { default as Span } from './i18n/Span';
 export { default as Td } from './i18n/Td';
 export { default as Th } from './i18n/Th';
-export { default as NoticeMsg } from './i18n/NoticeMsg';
+export { default as Notice } from './i18n/Notice';
 
 export { default as Countries } from './input/Countries';
 export { default as DateOfBirth } from './input/DateOfBirth';

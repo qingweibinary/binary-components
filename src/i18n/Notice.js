@@ -2,7 +2,7 @@ import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
 import P from './P';
 
-export default class NoticeMsg extends PureComponent {
+export default class Notice extends PureComponent {
 
     static propTypes = {
         className: PropTypes.string,

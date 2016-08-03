@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { errorToString } from 'binary-utils';
 import P from './P';
 
-export default class ErrorMsg extends PureComponent {
+export default class Error extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,
