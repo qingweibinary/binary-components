@@ -25,6 +25,6 @@ describe('<RangeGroup />', () => {
                 <RangeGroup items={['item1', 'item2', 'item3']} />
             </IntlProvider>
         );
-        expect(wrapper.find('label')).to.have.length(3);
+        expect(wrapper.find('span')).to.have.length(3);
     });
 });
