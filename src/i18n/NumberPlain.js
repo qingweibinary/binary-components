@@ -26,7 +26,7 @@ export default class NumberPlain extends PureComponent {
 					style={currency && 'currency'}
 					currency={currency}
 					value={value}
-					currencyDisplay="code"
+					currencyDisplay="symbol"
 					minimumFractionDigits={digits}
 					maximumFractionDigits={digits}
 				/>

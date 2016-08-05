@@ -10,7 +10,7 @@ import Error from '../src/i18n/Error';
 import Th from '../src/i18n/Th';
 import Td from '../src/i18n/Td';
 import InputGroup from '../src/input/InputGroup';
-
+import NumberPlain from '../src/i18n/NumberPlain';
 
 storiesOf('i18n', module)
     .add('M', () =>
@@ -31,6 +31,11 @@ storiesOf('i18n', module)
     .add('Error', () =>
         <IntlProvider locale="en">
             <Error text="Some error" />
+        </IntlProvider>
+    )
+    .add('NumberPlain', () =>
+        <IntlProvider locale="en">
+            <NumberPlain value={123} currency="USD" />
         </IntlProvider>
     )
     .add('DirectionAndValue', () =>
