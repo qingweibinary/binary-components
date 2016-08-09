@@ -1,6 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
-import { errorToString } from 'binary-utils';
 import P from './P';
 
 export default class Error extends PureComponent {
@@ -16,10 +15,9 @@ export default class Error extends PureComponent {
 		if (!text) return null;
 
 		const classes = classnames('errorfield', className);
-		const msg = errorToString(text);
 
 		return (
-			<P className={classes} text={msg} />
+			<P className={classes} text={text} />
 		);
 	}
 }
