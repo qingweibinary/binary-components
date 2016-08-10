@@ -42,3 +42,4 @@ export { default as DigitStatsChart } from './misc/DigitStatsChart';
 export { default as Resizer } from './misc/Resizer';
 export { default as Tab } from './misc/Tab';
 export { default as TabList } from './misc/TabList';
+export { default as ServerError } from './misc/ServerError';
