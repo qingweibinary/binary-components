@@ -1,7 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
 
-export default class Error extends PureComponent {
+export default class ServerError extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,
