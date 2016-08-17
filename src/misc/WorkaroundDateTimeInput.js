@@ -8,7 +8,6 @@ export default class WorkaroundDateTimeInput extends PureComponent {
     static propTypes = {
         type: PropTypes.oneOf(['time', 'date']),
         className: PropTypes.string,
-        id: PropTypes.string.isRequired,
         min: PropTypes.string,
         max: PropTypes.string,
         onChange: PropTypes.func,
@@ -16,16 +15,15 @@ export default class WorkaroundDateTimeInput extends PureComponent {
         maxLength: PropTypes.number,
     };
 
-    componentDidMount() {
-        const { id } = this.props;
-        const ele = this.refs[id];
-        ele.value = "";
-        ele.value = this.props.defaultValue;
+    setDefaultValue = inputEle => {
+        if (!inputEle) return;
+        inputEle.value = "";
+        inputEle.value = this.props.defaultValue;
     }
 
     render() {
         return (
-            <input {...this.props} ref={this.props.id} />
+            <input {...this.props} ref={this.setDefaultValue} />
         );
     }
 }
