@@ -43,3 +43,4 @@ export { default as Resizer } from './misc/Resizer';
 export { default as Tab } from './misc/Tab';
 export { default as TabList } from './misc/TabList';
 export { default as ServerError } from './misc/ServerError';
+export { default as WorkaroundDateTimeInput } from './misc/WorkaroundDateTimeInput';
