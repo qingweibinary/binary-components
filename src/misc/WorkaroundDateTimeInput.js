@@ -7,6 +7,7 @@ import React, { PropTypes, PureComponent } from 'react';
 export default class WorkaroundDateTimeInput extends PureComponent {
     static propTypes = {
         type: PropTypes.oneOf(['time', 'date']),
+        className: PropTypes.string,
         id: PropTypes.string.isRequired,
         min: PropTypes.string,
         max: PropTypes.string,
