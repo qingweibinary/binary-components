@@ -27,16 +27,22 @@ export default class NumericInput extends PureComponent {
     }
 
     onStepUp = () => {
-        const { step, decimals } = this.props;
+        const { step, decimals, max } = this.props;
         const { value } = this.state;
         const newValue = +((+value + step).toFixed(decimals));
+
+        if (newValue > max) return;
+
         this.onChange({ target: { value: newValue } });
     }
 
     onStepDown = () => {
-        const { step, decimals } = this.props;
+        const { step, decimals, min } = this.props;
         const { value } = this.state;
         const newValue = +((+value - step).toFixed(decimals));
+
+        if (newValue < min) return;
+
         this.onChange({ target: { value: newValue } });
     }
 
