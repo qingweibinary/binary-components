@@ -19,7 +19,7 @@ export default class WorkaroundDateTimeInput extends PureComponent {
     render() {
         return (
             <input {...this.props} ref={input => {
-                input.value = "";
+                input.value = '';
                 input.value = this.props.defaultValue;
             }} />
         );
