@@ -16,16 +16,12 @@ export default class WorkaroundDateTimeInput extends PureComponent {
         maxLength: PropTypes.number,
     };
 
-    componentDidMount() {
-        const { id } = this.props;
-        const ele = this.refs[id];
-        ele.value = "";
-        ele.value = this.props.defaultValue;
-    }
-
     render() {
         return (
-            <input {...this.props} ref={this.props.id} />
+            <input {...this.props} ref={input => {
+                input.value = "";
+                input.value = this.props.defaultValue;
+            }} />
         );
     }
 }
