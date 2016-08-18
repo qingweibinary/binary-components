@@ -24,6 +24,7 @@
     "no-confusing-arrow": 0,
     "no-param-reassign": 0,
     "react/jsx-indent": [0, "tab"],
+    "react/sort-comp": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-indent-props": [0, "tab"],
     "react/jsx-filename-extension": 0,
@@ -36,13 +37,13 @@
     "import/no-extraneous-imports": 0,
     "flowtype/define-flow-type": 1,
     "flowtype/require-parameter-type": 1,
-    "flowtype/require-return-type": [
-      1,
-      "always",
-      {
-        "annotateUndefined": "never"
-      }
-    ],
+    # "flowtype/require-return-type": [
+    #   1,
+    #   "always",
+    #   {
+    #     "annotateUndefined": "never"
+    #   }
+    # ],
     "flowtype/space-after-type-colon": [
       1,
       "always"

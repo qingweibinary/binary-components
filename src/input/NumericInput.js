@@ -1,5 +1,16 @@
 import React, { PropTypes, PureComponent } from 'react';
 
+type Props = {
+    className: string,
+    decimals: number,
+    min: number,
+    max: number,
+    step: number,
+    defaultValue: number,
+    valueList: string[],
+    onChange: (e: SyntheticEvent) => void,
+}
+
 export default class NumericInput extends PureComponent {
 
     static propTypes = {
@@ -19,7 +30,7 @@ export default class NumericInput extends PureComponent {
         step: 10,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             value: props.defaultValue,
@@ -46,11 +57,12 @@ export default class NumericInput extends PureComponent {
         this.onChange({ target: { value: newValue } });
     }
 
-    onChange = e => {
+    onChange = (e: SyntheticEvent) => {
         this.setState({ value: e.target.value });
-        // e.persist();
         this.props.onChange(e);
     }
+
+    props: Props;
 
     render() {
         const { className, step, min, max, valueList } = this.props;

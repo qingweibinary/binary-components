@@ -1,4 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
+import { sequence } from 'binary-utils';
 
 export default class DobDay extends PureComponent {
 
@@ -9,7 +10,7 @@ export default class DobDay extends PureComponent {
 
 	render() {
 		const { day, onDayChange } = this.props;
-		const days = Array.apply(0, Array(31));
+		const days = sequence(31);
 
 		return (
 			<select id="dobdd" name="dobdd" defaultValue={day} onChange={onDayChange}>

@@ -1,4 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
+import { sequence } from 'binary-utils';
 
 export default class DobYear extends PureComponent {
 
@@ -9,7 +10,7 @@ export default class DobYear extends PureComponent {
 
 	render() {
 		const { year, onYearChange } = this.props;
-		const years = Array.apply(0, Array(80));
+		const years = sequence(80);
 		const lastValidYear = new Date().getFullYear() - 18;
 
 		return (

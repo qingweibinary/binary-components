@@ -1,11 +1,16 @@
 import React, { PropTypes, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+export type Props = {
+	component: string,
+	text: string,
+};
+
 export default class TranslatedComponent extends PureComponent {
 
 	static propTypes = {
 		component: PropTypes.string.isRequired,
-		text: PropTypes.string,
+		text: PropTypes.string.isRequired,
 	};
 
 	static defaultProps = {
@@ -17,7 +22,7 @@ export default class TranslatedComponent extends PureComponent {
 
 		return (
 			<FormattedMessage id={text} defaultMessage={text}>
-				{message => React.createElement(component, rest, [message])}
+				{(message: React$Element) => React.createElement(component, rest, [message])}
 			</FormattedMessage>
 		);
 	}

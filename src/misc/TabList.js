@@ -1,5 +1,21 @@
 import React, { PropTypes, PureComponent } from 'react';
 
+type Props = {
+    id: string,
+    className: string,
+    children: Node,
+    activeIndex: number,
+    vertical: bool,
+    showText: bool,
+    showIcons: bool,
+    style: Object,
+    onChange: (index: number) => void,
+};
+
+type State = {
+    activeIndex: number,
+};
+
 export default class TabList extends PureComponent {
 
     static propTypes = {
@@ -21,7 +37,7 @@ export default class TabList extends PureComponent {
         showIcons: true,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
 
         this.state = {
@@ -29,11 +45,15 @@ export default class TabList extends PureComponent {
         };
     }
 
-    onTabSelected = index => {
+    state: State;
+
+    onTabSelected = (index: number): void => {
         const { onChange } = this.props;
         onChange(index);
         this.setState({ activeIndex: index });
     }
+
+    props: Props;
 
     render() {
         const { id, className, vertical, showIcons, showText } = this.props;
@@ -45,7 +65,7 @@ export default class TabList extends PureComponent {
                 role="tablist"
                 className={(vertical ? 'vertical ' : '') + className}
             >
-                {React.Children.map(this.props.children, (child, index) =>
+                {React.Children.map(this.props.children, (child: React$Element<any>, index: number): React$Element<any> =>
                     child && React.cloneElement(child, {
                         selected: activeIndex === index,
                         showIcon: showIcons,

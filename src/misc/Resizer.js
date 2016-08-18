@@ -22,7 +22,7 @@ export default class Resizer extends PureComponent {
 		window.removeEventListener('mouseup', this.onGlobalMouseUp);
 	}
 
-	render(): React$Element {
+	render() {
 		return (
 			<div
 				className={this.props.className}

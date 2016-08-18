@@ -5,6 +5,7 @@ import React, { PropTypes, PureComponent } from 'react';
 // TODO: once 15.3.1 is release this workaround should be removed
 
 export default class WorkaroundDateTimeInput extends PureComponent {
+
     static propTypes = {
         type: PropTypes.oneOf(['time', 'date']),
         className: PropTypes.string,
@@ -15,10 +16,10 @@ export default class WorkaroundDateTimeInput extends PureComponent {
         maxLength: PropTypes.number,
     };
 
-    setDefaultValue = inputEle => {
-        if (!inputEle) return;
-        inputEle.value = '';
-        inputEle.value = this.props.defaultValue;
+    setDefaultValue = (inputElement: InputNode) => {
+        if (!inputElement) return;
+        inputElement.value = '';
+        inputElement.value = this.props.defaultValue;
     }
 
     render() {
