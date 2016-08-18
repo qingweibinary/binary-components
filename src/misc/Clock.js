@@ -3,6 +3,12 @@ import { dateToGMTString } from 'binary-utils';
 
 export default class Clock extends PureComponent {
 
+    props: Props;
+
+    state: {
+        time: Date;
+    };
+
     static propTypes = {
         serverTimeDiff: PropTypes.number,
     };
@@ -11,7 +17,7 @@ export default class Clock extends PureComponent {
         serverTimeDiff: 0,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
 
         this.state = {
@@ -20,7 +26,7 @@ export default class Clock extends PureComponent {
     }
 
     componentDidMount() {
-        this.interval = setInterval(() =>
+        this.interval = setInterval((): void =>
             this.setState({ time: Date.now() }), 1000);
     }
 
@@ -31,11 +37,15 @@ export default class Clock extends PureComponent {
     render() {
         const { time } = this.state;
         const { serverTimeDiff } = this.props;
-        const displayTime = dateToGMTString(new Date(time + serverTimeDiff));
+        const adjustedTime = new Date(time + serverTimeDiff);
+        const displayTimeGMT = dateToGMTString(adjustedTime);
 
         return (
             <div>
-                {displayTime} GMT
+                <span>{displayTimeGMT} GMT</span>
+                <div className="tooltip">
+                    {adjustedTime.toDateString()}
+                </div>
             </div>
         );
     }

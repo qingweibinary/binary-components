@@ -12,17 +12,17 @@ export default class Resizer extends PureComponent {
 		window.addEventListener('mouseup', this.onGlobalMouseUp);
 	}
 
-	onGlobalMouseMove = e => {
+	onGlobalMouseMove = (e: Event) => {
 		this.props.onResize(e);
 	}
 
-	onGlobalMouseUp = e => {
+	onGlobalMouseUp = (e: Event) => {
 		this.props.onResize(e);
 		window.removeEventListener('mousemove', this.onGlobalMouseMove);
 		window.removeEventListener('mouseup', this.onGlobalMouseUp);
 	}
 
-	render() {
+	render(): React$Element {
 		return (
 			<div
 				className={this.props.className}
