@@ -8,7 +8,7 @@ export { default as LogoSpinner } from './graphical/LogoSpinner';
 export { default as Star } from './graphical/Star';
 
 export { default as Button } from './i18n/Button';
-export { default as Error } from './i18n/Error';
+export { default as ErrorMsg } from './i18n/ErrorMsg';
 export { default as FormattedDateRange } from './i18n/FormattedDateRange';
 export { default as Label } from './i18n/Label';
 export { default as Legend } from './i18n/Legend';
@@ -42,5 +42,5 @@ export { default as DigitStatsChart } from './misc/DigitStatsChart';
 export { default as Resizer } from './misc/Resizer';
 export { default as Tab } from './misc/Tab';
 export { default as TabList } from './misc/TabList';
-export { default as ServerError } from './misc/ServerError';
+export { default as ServerErrorMsg } from './misc/ServerErrorMsg';
 export { default as WorkaroundDateTimeInput } from './misc/WorkaroundDateTimeInput';

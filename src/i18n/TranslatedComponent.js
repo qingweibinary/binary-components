@@ -22,7 +22,9 @@ export default class TranslatedComponent extends PureComponent {
 
 		return (
 			<FormattedMessage id={text} defaultMessage={text}>
-				{(message: React$Element) => React.createElement(component, rest, [message])}
+				{(message: React$Element<TranslatedComponent>) =>
+					React.createElement(component, rest, [message])
+				}
 			</FormattedMessage>
 		);
 	}

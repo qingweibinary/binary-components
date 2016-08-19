@@ -1,8 +1,7 @@
 import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
-import P from './P';
 
-export default class Error extends PureComponent {
+export default class ServerErrorMsg extends PureComponent {
 
 	static propTypes = {
 		className: PropTypes.string,
@@ -17,7 +16,7 @@ export default class Error extends PureComponent {
 		const classes = classnames('errorfield', className);
 
 		return (
-			<P className={classes} text={text} />
+			<p className={classes}>{text}</p>
 		);
 	}
 }

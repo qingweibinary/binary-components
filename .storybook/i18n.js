@@ -6,7 +6,7 @@ import Button from '../src/i18n/Button';
 import DirectionAndValue from '../src/graphical/DirectionAndValue';
 import FormattedDateRange from '../src/i18n/FormattedDateRange';
 import Label from '../src/i18n/Label';
-import Error from '../src/i18n/Error';
+import ErrorMsg from '../src/i18n/ErrorMsg';
 import Th from '../src/i18n/Th';
 import Td from '../src/i18n/Td';
 import InputGroup from '../src/input/InputGroup';
@@ -30,7 +30,7 @@ storiesOf('i18n', module)
     )
     .add('Error', () =>
         <IntlProvider locale="en">
-            <Error text="Some error" />
+            <ErrorMsg text="Some error" />
         </IntlProvider>
     )
     .add('NumberPlain', () =>

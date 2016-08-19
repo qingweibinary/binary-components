@@ -7,11 +7,17 @@ type Props = {
     max: number,
     step: number,
     defaultValue: number,
-    valueList: string[],
-    onChange: (e: SyntheticEvent) => void,
+    valueList: number[],
+    onChange: (newValue: number) => void,
 }
 
 export default class NumericInput extends PureComponent {
+
+    props: Props;
+
+    state: {
+        value: number,
+    }
 
     static propTypes = {
         className: PropTypes.string,
@@ -44,7 +50,7 @@ export default class NumericInput extends PureComponent {
 
         if (newValue > max) return;
 
-        this.onChange({ target: { value: newValue } });
+        this.onChange(newValue);
     }
 
     onStepDown = () => {
@@ -54,15 +60,13 @@ export default class NumericInput extends PureComponent {
 
         if (newValue < min) return;
 
-        this.onChange({ target: { value: newValue } });
+        this.onChange(newValue);
     }
 
-    onChange = (e: SyntheticEvent) => {
-        this.setState({ value: e.target.value });
-        this.props.onChange(e);
+    onChange = (newValue: number) => {
+        this.setState({ value: newValue });
+        this.props.onChange(newValue);
     }
-
-    props: Props;
 
     render() {
         const { className, step, min, max, valueList } = this.props;
@@ -82,7 +86,7 @@ export default class NumericInput extends PureComponent {
                 <button className="btn-flat step-up" onClick={this.onStepUp}>+</button>
                 {valueList &&
                     <datalist id="values">
-                        {valueList.map(x =>
+                        {valueList.map((x: number) =>
                             <option key={x} value={x} />
                         )}
                     </datalist>

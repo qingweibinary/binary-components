@@ -1,7 +1,17 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { dateToGMTString } from 'binary-utils';
 
+type Props = {
+    serverTimeDiff: number,
+};
+
 export default class Clock extends PureComponent {
+
+    props: Props;
+
+    state: {
+        time: number;
+    };
 
     interval: number;
 
@@ -29,14 +39,6 @@ export default class Clock extends PureComponent {
     componentWillUnmount() {
 		clearInterval(this.interval);
 	}
-
-    props: {
-        serverTimeDiff: number,
-    };
-
-    state: {
-        time: Date;
-    };
 
     render() {
         const { time } = this.state;

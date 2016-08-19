@@ -16,7 +16,7 @@ export default class WorkaroundDateTimeInput extends PureComponent {
         maxLength: PropTypes.number,
     };
 
-    setDefaultValue = (inputElement: InputNode) => {
+    setDefaultValue = (inputElement: any) => {
         if (!inputElement) return;
         inputElement.value = '';
         inputElement.value = this.props.defaultValue;
