@@ -1,4 +1,4 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 
 const MONTHS = [
 	'January',
@@ -17,9 +17,9 @@ const MONTHS = [
 
 export default class DobMonth extends PureComponent {
 
-	static propTypes = {
-		month: PropTypes.number,
-		onMonthChange: PropTypes.func,
+	props: {
+		month: number,
+		onMonthChange: (e: SyntheticEvent) => void,
 	};
 
 	render() {
@@ -28,7 +28,7 @@ export default class DobMonth extends PureComponent {
 		return (
 			<select id="dobmm" name="dobmm" defaultValue={month} onChange={onMonthChange}>
 				<option disabled>Month</option>
-				{MONTHS.map((o, i) =>
+				{MONTHS.map((o: string, i: number) =>
 					<option key={i} value={i}>{o}</option>
 				)}
 			</select>

@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 type Props = {
     id: string,
@@ -12,22 +12,12 @@ type Props = {
     onChange: (index: number) => void,
 };
 
-type State = {
-    activeIndex: number,
-};
-
 export default class TabList extends PureComponent {
 
-    static propTypes = {
-        id: PropTypes.string,
-        className: PropTypes.string,
-        children: PropTypes.node,
-        activeIndex: PropTypes.number,
-        vertical: PropTypes.bool,
-        showText: PropTypes.bool,
-        showIcons: PropTypes.bool,
-        style: PropTypes.object,
-        onChange: PropTypes.func,
+    props: Props;
+
+    state: {
+        activeIndex: number,
     };
 
     static defaultProps = {
@@ -44,8 +34,6 @@ export default class TabList extends PureComponent {
             activeIndex: props.activeIndex,
         };
     }
-
-    state: State;
 
     onTabSelected = (index: number): void => {
         const { onChange } = this.props;

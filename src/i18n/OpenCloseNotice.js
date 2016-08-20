@@ -1,10 +1,10 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 import M from './M';
 
 export default class OpenCloseNotice extends PureComponent {
 
-    static propTypes = {
-        isOpen: PropTypes.bool,
+    props: {
+        isOpen: boolean,
     }
 
     static defaultProps = {

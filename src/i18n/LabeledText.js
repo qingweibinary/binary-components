@@ -1,12 +1,12 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import M from './M';
 
 export default class LabeledText extends PureComponent {
 
-    static propTypes = {
-        id: PropTypes.string,
-        label: PropTypes.string.isRequired,
-        value: PropTypes.string,
+    props: {
+        id: string,
+        label: string,
+        value: string,
     };
 
     static defaultProps = {

@@ -1,13 +1,13 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { directionClassName } from 'binary-utils';
 import Direction from './Direction';
 import NumberPlain from '../i18n/NumberPlain';
 
 export default class DirectionAndValue extends PureComponent {
 
-	static propTypes = {
-		diff: PropTypes.number,
-		value: PropTypes.number,
+	props: {
+		diff: number,
+		value: number,
 	};
 
 	static defaultProps = {
@@ -16,6 +16,7 @@ export default class DirectionAndValue extends PureComponent {
 
 	render() {
 		const { diff, value } = this.props;
+
 		return (
 			<span>
 				<Direction diff={diff} />

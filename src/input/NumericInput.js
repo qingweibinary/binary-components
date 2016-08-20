@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 type Props = {
     className: string,
@@ -19,17 +19,6 @@ export default class NumericInput extends PureComponent {
         value: number,
     }
 
-    static propTypes = {
-        className: PropTypes.string,
-        decimals: PropTypes.number,
-        min: PropTypes.number,
-        max: PropTypes.number,
-        step: PropTypes.number,
-        defaultValue: PropTypes.number,
-        valueList: PropTypes.array,
-        onChange: PropTypes.func.isRequired,
-    };
-
     static defaultProps = {
         defaultValue: 0,
         decimals: 2,
@@ -38,6 +27,7 @@ export default class NumericInput extends PureComponent {
 
     constructor(props: Props) {
         super(props);
+
         this.state = {
             value: props.defaultValue,
         };

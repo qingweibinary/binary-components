@@ -1,6 +1,11 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
-const DirectionNone = ({ width, height }) =>
+type Dimensions = {
+	width: number,
+	height: number,
+}
+
+const DirectionNone = ({ width, height }: Dimensions) =>
 	<rect
 		x={width / 5}
 		y={height / 5 * 3}
@@ -9,24 +14,19 @@ const DirectionNone = ({ width, height }) =>
 		style={{ fill: 'grey ' }}
 	/>;
 
-const DirectionUp = ({ width, height }) =>
+const DirectionUp = ({ width, height }: Dimensions) =>
 	<polygon
 		points={`0,${height} ${width},${height} ${width / 2},${height / 5 * 2}`}
 		style={{ fill: 'green' }}
 	/>;
 
-const DirectionDown = ({ width, height }) =>
+const DirectionDown = ({ width, height }: Dimensions) =>
 	<polygon
 		points={`0,${height / 5 * 2} ${width},${height / 5 * 2} ${width / 2},${height}`}
 		style={{ fill: 'red' }}
 	/>;
 
-DirectionNone.propTypes = DirectionUp.propTypes = DirectionDown.propTypes = {
-	width: PropTypes.number,
-	height: PropTypes.number,
-};
-
-const getDirectionComponent = diff => {
+const getDirectionComponent = (diff: number) => {
 	switch (Math.sign(diff)) {
 		case -1: return DirectionDown;
 		case 1: return DirectionUp;
@@ -36,11 +36,11 @@ const getDirectionComponent = diff => {
 
 export default class Direction extends PureComponent {
 
-	static propTypes = {
-		diff: PropTypes.number,
-		width: PropTypes.number,
-		height: PropTypes.number,
-	};
+	props: {
+		diff: number,
+		width: number,
+		height: number,
+	}
 
 	static defaultProps = {
 		diff: 0,

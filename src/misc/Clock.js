@@ -1,4 +1,4 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 import { dateToGMTString } from 'binary-utils';
 
 type Props = {
@@ -14,10 +14,6 @@ export default class Clock extends PureComponent {
     };
 
     interval: number;
-
-    static propTypes = {
-        serverTimeDiff: PropTypes.number,
-    };
 
     static defaultProps = {
         serverTimeDiff: 0,

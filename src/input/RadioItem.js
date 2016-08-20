@@ -1,20 +1,25 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import M from '../i18n/M';
 
 export default class RadioItem extends PureComponent {
 
-	static propTypes = {
-		checked: PropTypes.bool,
-		defaultChecked: PropTypes.bool,
-		img: PropTypes.string,
-		label: PropTypes.any,
-		name: PropTypes.string,
-		onChange: PropTypes.func,
-		value: PropTypes.any,
+	props: {
+		checked: boolean,
+		defaultChecked?: boolean,
+		img: string,
+		label: string,
+		name: string,
+		onChange: (e: SyntheticEvent) => void,
+		value: any,
 	};
+
+	static defaultProps = {
+		defaultChecked: false,
+	}
 
 	render() {
 		const { checked, defaultChecked, img, label, name, onChange, value } = this.props;
+
 		return (
 			<span className="radio-item">
 				<input

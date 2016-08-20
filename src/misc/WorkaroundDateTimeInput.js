@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 // this component is to workaround react bug with chrome rendering engine
 // https://github.com/facebook/react/issues/7233
@@ -6,14 +6,14 @@ import React, { PropTypes, PureComponent } from 'react';
 
 export default class WorkaroundDateTimeInput extends PureComponent {
 
-    static propTypes = {
-        type: PropTypes.oneOf(['time', 'date']),
-        className: PropTypes.string,
-        min: PropTypes.string,
-        max: PropTypes.string,
-        onChange: PropTypes.func,
-        defaultValue: PropTypes.any.isRequired,
-        maxLength: PropTypes.number,
+    props: {
+        type: 'time' | 'date',
+        className: string,
+        min: string,
+        max: string,
+        onChange: (e: SyntheticEvent) => void,
+        defaultValue: any,
+        maxLength: number,
     };
 
     setDefaultValue = (inputElement: any) => {

@@ -1,11 +1,17 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+
+type Residence = {
+	value: string,
+	text: string,
+	disabled: boolean,
+}
 
 export default class Countries extends PureComponent {
 
-	static propTypes = {
-		value: PropTypes.string,
-		onChange: PropTypes.func,
-		residenceList: PropTypes.array.isRequired,
+	props: {
+		value: string,
+		onChange: (e: SyntheticEvent) => void,
+		residenceList: Residence[],
 	};
 
 	static defaultProps = {
@@ -18,7 +24,7 @@ export default class Countries extends PureComponent {
 		return (
 			<select name="residence" onChange={onChange} defaultValue={value}>
                 <option value="">Country of Residence</option>
-				{residenceList.map(x =>
+				{residenceList.map((x: Residence) =>
                     <option
                         key={x.value}
                         value={x.value}

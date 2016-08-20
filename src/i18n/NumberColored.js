@@ -1,20 +1,20 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 import { directionClassName } from 'binary-utils';
 import NumberPlain from './NumberPlain';
 
 export default class NumberColored extends PureComponent {
 
-	static propTypes = {
-		value: PropTypes.any,
-		currency: PropTypes.any,
-		isProfit: PropTypes.func,
-		digits: PropTypes.number,
-		className: PropTypes.string,
+	props: {
+		value: number,
+		currency: string,
+		isProfit?: () => boolean,
+		digits?: number,
+		className?: string,
 	};
 
 	static defaultProps = {
-		isProfit: v => v,
+		isProfit: (v: boolean) => v,
 	};
 
 	render() {
@@ -22,7 +22,12 @@ export default class NumberColored extends PureComponent {
 		const classes = classnames(directionClassName(isProfit(value)), className);
 
 		return (
-			<NumberPlain className={classes} value={value} currency={currency} digits={digits} />
+			<NumberPlain
+				className={classes}
+				value={value}
+				currency={currency}
+				digits={digits}
+			/>
 		);
 	}
 }

@@ -1,16 +1,11 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-
-export type Props = {
-	component: string,
-	text: string,
-};
 
 export default class TranslatedComponent extends PureComponent {
 
-	static propTypes = {
-		component: PropTypes.string.isRequired,
-		text: PropTypes.string.isRequired,
+	props: {
+		component: string,
+		text: string,
 	};
 
 	static defaultProps = {

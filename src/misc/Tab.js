@@ -1,19 +1,19 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import CloseButton from '../graphical/CloseButton';
 import M from '../i18n/M';
 
 export default class Tab extends PureComponent {
 
-    static propTypes = {
-        imgSrc: PropTypes.string,
-        index: PropTypes.number,
-        selected: PropTypes.bool,
-        showIcon: PropTypes.bool,
-        showText: PropTypes.bool,
-        text: PropTypes.string,
-        closable: PropTypes.bool,
-        onClick: PropTypes.func,
-        onClose: PropTypes.func,
+    props: {
+        imgSrc: string,
+        index: number,
+        selected: boolean,
+        showIcon: boolean,
+        showText: boolean,
+        text: string,
+        closable: bool,
+        onClick: (e: SyntheticEvent) => void,
+        onClose: (e: SyntheticEvent) => void,
     };
 
     static defaultProps = {

@@ -1,11 +1,11 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { FormattedDate } from 'react-intl';
 
 export default class FormattedDateRange extends PureComponent {
 
-	static propTypes = {
-		fromDate: PropTypes.instanceOf(Date),
-		toDate: PropTypes.instanceOf(Date),
+	props: {
+		fromDate: Date,
+		toDate: Date,
 	};
 
 	render() {

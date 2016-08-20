@@ -1,10 +1,10 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 export default class Resizer extends PureComponent {
 
-	static propTypes = {
-		onResize: PropTypes.func.isRequired,
-		className: PropTypes.string,
+	props: {
+		className: string,
+		onResize: (e: Event) => void,
 	};
 
 	onMouseDown = () => {

@@ -1,11 +1,11 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 
 export default class ServerErrorMsg extends PureComponent {
 
-	static propTypes = {
-		className: PropTypes.string,
-		text: PropTypes.string,
+	props: {
+		className: string,
+		text: string,
 	};
 
 	render() {

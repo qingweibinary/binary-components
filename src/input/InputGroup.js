@@ -1,27 +1,27 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Label from '../i18n/Label';
 
-const valueTypes = [PropTypes.number, PropTypes.instanceOf(Date), PropTypes.string];
+type Value = number | Date | string;
 
 export default class InputGroup extends PureComponent {
 
-	static propTypes = {
-		type: PropTypes.string,
-		id: PropTypes.string,
-		className: PropTypes.string,
-		label: PropTypes.string,
-		list: PropTypes.string,
-		defaultValue: PropTypes.oneOfType(valueTypes),
-		value: PropTypes.oneOfType(valueTypes),
-		min: PropTypes.oneOfType(valueTypes),
-		max: PropTypes.oneOfType(valueTypes),
-		step: PropTypes.any,
-		readOnly: PropTypes.bool,
-		placeholder: PropTypes.string,
-		onChange: PropTypes.func,
-		autoComplete: PropTypes.string,
-		maxLength: PropTypes.string,
+	props: {
+		type: string,
+		id: string,
+		className: string,
+		label: string,
+		list: string,
+		defaultValue: Value,
+		value: Value,
+		min: Value,
+		max: Value,
+		step: number,
+		readOnly: boolean,
+		placeholder: string,
+		onChange: (e: SyntheticEvent) => void,
+		autoComplete: string,
+		maxLength: string,
 	};
 
 	render() {
@@ -32,7 +32,7 @@ export default class InputGroup extends PureComponent {
 				{label && <Label htmlFor={id} text={label} />}
 				{placeholder ?
 					<FormattedMessage id={placeholder} defaultMessage={placeholder}>
-						{message =>
+						{(message: string) =>
 							<input id={id} placeholder={message} {...rest} />
 						}
 					</FormattedMessage> :

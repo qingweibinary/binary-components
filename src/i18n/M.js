@@ -1,13 +1,13 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 export default class M extends PureComponent {
 
-	static propTypes = {
-		id: PropTypes.string,
-		className: PropTypes.string,
-		m: PropTypes.string,
-		values: PropTypes.object,
+	props: {
+		id?: string,
+		className?: string,
+		m: string,
+		values?: Object,
 	};
 
 	render() {
@@ -15,7 +15,7 @@ export default class M extends PureComponent {
 
 		return (
 			<FormattedMessage id={m} defaultMessage={m} values={values}>
-				{message =>
+				{(message: string) =>
 					<span id={id} className={className}>
 						{message}
 					</span>

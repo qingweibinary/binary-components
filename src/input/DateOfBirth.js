@@ -1,15 +1,15 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 import DobDay from './DobDay';
 import DobMonth from './DobMonth';
 import DobYear from './DobYear';
 
 export default class DateOfBirth extends PureComponent {
 
-	static propTypes = {
-		date: PropTypes.instanceOf(Date),
-		onDayChange: PropTypes.func,
-		onMonthChange: PropTypes.func,
-		onYearChange: PropTypes.func,
+	props: {
+		date: Date,
+		onDayChange: (e: SyntheticEvent) => void,
+		onMonthChange: (e: SyntheticEvent) => void,
+		onYearChange: (e: SyntheticEvent) => void,
 	};
 
 	static defaultProps = {

@@ -1,18 +1,18 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import Label from '../i18n/Label';
 
 export default class RangeGroup extends PureComponent {
 
-	static propTypes = {
-		items: PropTypes.array,
-		id: PropTypes.string,
-		label: PropTypes.string,
-		defaultValue: PropTypes.number,
-		min: PropTypes.number,
-		max: PropTypes.number,
-		step: PropTypes.number,
-		readOnly: PropTypes.bool,
-		onChange: PropTypes.func,
+	props: {
+		items: number[],
+		id: string,
+		label: string,
+		defaultValue: number,
+		min: number,
+		max: number,
+		step: number,
+		readOnly: bool,
+		onChange: (e: SyntheticEvent) => void,
 	};
 
 	static defaultProps = {
@@ -30,7 +30,7 @@ export default class RangeGroup extends PureComponent {
 					{...rest}
 				/>
 				<div className="range-selector-items">
-					{items.map(i => <span key={i}>{i}</span>)}
+					{items.map((i: number) => <span key={i}>{i}</span>)}
 				</div>
 			</fieldset>
 		);

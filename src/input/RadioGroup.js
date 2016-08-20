@@ -1,16 +1,22 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import RadioItem from './RadioItem';
+
+type Options = {
+	img: string,
+	value: string,
+	text: string,
+}
 
 export default class RadioGroup extends PureComponent {
 
-	static propTypes = {
-		className: PropTypes.string,
-		name: PropTypes.string,
-		text: PropTypes.string,
-		img: PropTypes.string,
-		options: PropTypes.array,
-		onChange: PropTypes.func.isRequired,
-		value: PropTypes.any,
+	props: {
+		className: string,
+		name: string,
+		text: string,
+		img: string,
+		options: Options[],
+		onChange: (e: SyntheticEvent) => void,
+		value: any,
 	};
 
 	static defaultProps = {
@@ -20,9 +26,10 @@ export default class RadioGroup extends PureComponent {
 
 	render() {
 		const { className, onChange, name, options, value } = this.props;
+
 		return (
 			<fieldset className={className}>
-				{options.map(o =>
+				{options.map((o: Options) =>
 					<RadioItem
 						key={name + o.value}
 						checked={o.value === value}

@@ -1,13 +1,13 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { FormattedNumber } from 'react-intl';
 
 export default class NumberPlain extends PureComponent {
 
-	static propTypes = {
-		currency: PropTypes.string,
-		value: PropTypes.any,
-		digits: PropTypes.number,
-		className: PropTypes.string,
+	props: {
+		currency?: string,
+		value: any,
+		digits: number,
+		className?: string,
 	};
 
 	static defaultProps = {

@@ -1,12 +1,12 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 import P from './P';
 
 export default class Notice extends PureComponent {
 
-    static propTypes = {
-        className: PropTypes.string,
-        text: PropTypes.string.isRequired,
+    props: {
+        className: string,
+        text: string,
     };
 
     render() {

@@ -1,17 +1,22 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import Label from '../i18n/Label';
+
+type Option = {
+	value: string,
+	text: string,
+}
 
 export default class SelectGroup extends PureComponent {
 
-	static propTypes = {
-		hint: PropTypes.string,
-		id: PropTypes.string,
-		className: PropTypes.string,
-		label: PropTypes.string,
-		onChange: PropTypes.func,
-		options: PropTypes.array,
-		readOnly: PropTypes.bool,
-		value: PropTypes.string,
+	props: {
+		hint: string,
+		id: string,
+		className: string,
+		label: string,
+		options: Option[],
+		readOnly: bool,
+		value: string,
+		onChange: (e: SyntheticEvent) => void,
 	};
 
 	static defaultProps = {
@@ -25,7 +30,7 @@ export default class SelectGroup extends PureComponent {
 			<fieldset className={className}>
 				{label && <Label htmlFor={id} text={label} />}
 				<select id={id} readOnly={readOnly} onChange={onChange} value={value}>
-					{options.map(o =>
+					{options.map((o: Option) =>
 						<option key={o.value} value={o.value}>{o.text}</option>
 					)}
 				</select>

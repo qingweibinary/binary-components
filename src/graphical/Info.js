@@ -1,9 +1,9 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 
 export default class Clock extends PureComponent {
 
-    static propTypes = {
-        tooltip: PropTypes.string,
+    props: {
+        tooltip: string,
     };
 
     render() {

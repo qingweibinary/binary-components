@@ -1,9 +1,9 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 export default class LogoSpinner extends PureComponent {
 
-	static propTypes = {
-		spinning: PropTypes.bool,
+	props: {
+		spinning: boolean,
 	};
 
 	render() {
