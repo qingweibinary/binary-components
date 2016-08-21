@@ -9,8 +9,6 @@
 .*/__tests__
 .*/.storybook
 
-.*/node_modules/babel-*
-
 [include]
 
 [libs]
