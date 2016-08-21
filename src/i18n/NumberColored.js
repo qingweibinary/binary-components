@@ -6,20 +6,21 @@ import NumberPlain from './NumberPlain';
 export default class NumberColored extends PureComponent {
 
 	props: {
-		value: number,
-		currency: string,
-		isProfit?: () => boolean,
-		digits?: number,
 		className?: string,
+		currency?: string,
+		digits: number,
+		style: 'decimal' | 'currency' | 'percent',
+		value: number,
 	};
 
 	static defaultProps = {
-		isProfit: (v: boolean) => v,
+		style: 'currency',
+		digits: 2,
 	};
 
 	render() {
-		const { value, currency, digits, isProfit, className } = this.props;
-		const classes = classnames(directionClassName(isProfit(value)), className);
+		const { value, currency, digits, className } = this.props;
+		const classes = classnames(directionClassName(value), className);
 
 		return (
 			<NumberPlain
