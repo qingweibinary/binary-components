@@ -4,4 +4,5 @@ declare module 'binary-utils' {
   declare function dateToGMTString(date: Date): string;
   declare function arrayMin(arr: any[]): number;
   declare function arrayMax(arr: any[]): number;
+  declare function getUniqueId(): number;
 }
