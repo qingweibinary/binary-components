@@ -71,7 +71,7 @@ export default class NumericInput extends PureComponent {
                     max={max}
                     step={step}
                     list="values"
-                    onChange={this.onChange}
+                    onChange={e => this.onChange(+e.target.value)}
                 />
                 <button className="btn-flat step-up" onClick={this.onStepUp}>+</button>
                 {valueList &&
