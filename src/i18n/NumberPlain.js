@@ -12,7 +12,7 @@ export default class NumberPlain extends PureComponent {
 	};
 
 	static defaultProps = {
-		style: 'currency',
+		style: 'decimal',
 		digits: 2,
 	};
 
@@ -25,7 +25,7 @@ export default class NumberPlain extends PureComponent {
 		return (
 			<span className={className}>
 				<FormattedNumber
-					style={style}
+					style={currency ? 'currency' : style}
 					currency={currency}
 					value={value}
 					currencyDisplay="symbol"
