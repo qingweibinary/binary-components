@@ -5,7 +5,10 @@ import DateOfBirth from '../src/input/DateOfBirth';
 
 storiesOf('Inputs', module)
     .add('NumericInput', () =>
-        <NumericInput />
+        <NumericInput min={0} max={500} defaultValue={10} />
+    )
+    .add('NumericInput (no decimals)', () =>
+        <NumericInput min={0} max={500} integer />
     )
     .add('DateOfBirth', () =>
         <DateOfBirth />
