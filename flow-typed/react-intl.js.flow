@@ -1,3 +1,5 @@
+// custom written by Boris, should contribute to flow-type later
+
 type LocaleData = {
     locale: string,
     [key: string]: any,

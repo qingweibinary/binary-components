@@ -12,6 +12,8 @@
 [include]
 
 [libs]
+./node_modules/binary-utils/flow-typed/binary.js.flow
+./node_modules/binary-utils/flow-typed/binary-utils.js.flow
 
 [options]
 esproposal.class_static_fields=enable
