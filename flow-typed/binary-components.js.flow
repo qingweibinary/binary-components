@@ -1,0 +1,48 @@
+declare module 'binary-components' {
+    declare class CloseButton extends React$Component {}
+    declare class Direction extends React$Component {}
+    declare class DirectionAndValue extends React$Component {}
+    declare class DownArrow extends React$Component {}
+    declare class Info extends React$Component {}
+    declare class Logo extends React$Component {}
+    declare class LogoSpinner extends React$Component {}
+    declare class Star extends React$Component {}
+
+    declare class Button extends React$Component {}
+    declare class ErrorMsg extends React$Component {}
+    declare class FormattedDateRange extends React$Component {}
+    declare class Label extends React$Component {}
+    declare class LabeledText extends React$Component {}
+    declare class Legend extends React$Component {}
+    declare class M extends React$Component {}
+    declare class Notice extends React$Component {}
+    declare class Number extends React$Component {}
+    declare class NumberColored extends React$Component {}
+    declare class NumberPlain extends React$Component {}
+    declare class OpenCloseNotice extends React$Component {}
+    declare class Option extends React$Component {}
+    declare class P extends React$Component {}
+    declare class Span extends React$Component {}
+    declare class Td extends React$Component {}
+    declare class Th extends React$Component {}
+    declare class TranslatedComponent extends React$Component {}
+
+    declare class Countries extends React$Component {}
+    declare class DateOfBirth extends React$Component {}
+    declare class DobDay extends React$Component {}
+    declare class DobMonth extends React$Component {}
+    declare class DobYear extends React$Component {}
+    declare class InputGroup extends React$Component {}
+    declare class NumericInput extends React$Component {}
+    declare class RadioGroup extends React$Component {}
+    declare class RadioItem extends React$Component {}
+    declare class RangeGroup extends React$Component {}
+    declare class SelectGroup extends React$Component {}
+
+    declare class Clock extends React$Component {}
+    declare class DigitStatsChart extends React$Component {}
+    declare class Resizer extends React$Component {}
+    declare class ServerErrorMsg extends React$Component {}
+    declare class Tab extends React$Component {}
+    declare class TabList extends React$Component {}
+}

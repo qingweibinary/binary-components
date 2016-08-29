@@ -1,6 +1,6 @@
 {
   "name": "binary-components",
-  "version": "2.18.0",
+  "version": "2.18.2",
   "description": "React Components for Binary.com Apps",
   "main": "lib/",
   "scripts": {
