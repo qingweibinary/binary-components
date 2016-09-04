@@ -36,8 +36,8 @@ export default class NumericInput extends PureComponent {
         const { value } = this.state;
         const notInt = +value % 1 !== 0;
 
-        return notInt ?
-            0.01 :
+        return notInt || value === '0' ?
+            0.1 :
             10 ** (value.length - 1);
     }
 
@@ -51,8 +51,10 @@ export default class NumericInput extends PureComponent {
     onStepUp = () =>
         this.updateValue(this.step());
 
-    onStepDown = () =>
-        this.updateValue(-this.step());
+    onStepDown = () => {
+        const smallerStepDown = (this.state.value).toString()[0] === '1';
+        this.updateValue(smallerStepDown ? -this.step() / 10 : -this.step());
+    }
 
     changeValue = (newValue: number) => {
         const { min, max, integer } = this.props;

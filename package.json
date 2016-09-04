@@ -1,10 +1,10 @@
 {
   "name": "binary-components",
-  "version": "2.18.2",
+  "version": "2.19.0",
   "description": "React Components for Binary.com Apps",
   "main": "lib/",
   "scripts": {
-    "start": "start-storybook -p 9001",
+    "start": "start-storybook -p 9001 --dont-track",
     "build": "gulp",
     "prepublish": "npm run build",
     "storybook": "build-storybook -o dist",
