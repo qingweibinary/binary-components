@@ -70,9 +70,9 @@ export default class NumericInput extends PureComponent {
     changeValue = (newValue: number) => {
         const { integer } = this.props;
 
-        const value = integer ? Math.floor(newValue) : newValue;
+        const value = (newValue && integer) ? Math.floor(newValue) : newValue;
 
-        this.setState({ value: value.toString() });
+        this.setState({ value: value ? value.toString() : undefined });
         const { onChange } = this.props;
         if (onChange) onChange(+value);
     }
