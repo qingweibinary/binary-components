@@ -41,32 +41,36 @@ export default class NumericInput extends PureComponent {
             10 ** (value.length - 1);
     }
 
-    updateValue = (diff: number) => {
-        const { decimals } = this.props;
+    // this function will perform checks on new value and change it automatically
+    addDiffWithChecks = (diff: number) => {
+        const { decimals, min, max } = this.props;
         const value = +this.state.value;
-        const newValue = +((value + diff).toFixed(decimals));
+        let newValue = +((value + diff).toFixed(decimals));
+
+        if (newValue > max) {
+            newValue = max;
+        } else if (newValue < min) {
+            newValue = min;
+        }
+
         this.changeValue(newValue);
     }
 
     onStepUp = () =>
-        this.updateValue(this.step());
+        this.addDiffWithChecks(this.step());
 
     onStepDown = () => {
         const smallerStepDown = (this.state.value).toString()[0] === '1';
-        this.updateValue(smallerStepDown ? -this.step() / 10 : -this.step());
+        this.addDiffWithChecks(smallerStepDown ? -this.step() / 10 : -this.step());
     }
 
+    // this function should not check and change input value automatically!!
+    // as invalid value could be intermediate value of valid value
+    // eg. empty value
     changeValue = (newValue: number) => {
-        const { min, max, integer } = this.props;
+        const { integer } = this.props;
 
-        let value;
-        if (min > newValue) {
-            value = min;
-        } else if (newValue > max) {
-            value = max;
-        } else {
-            value = integer ? Math.floor(newValue) : newValue;
-        }
+        const value = integer ? Math.floor(newValue) : newValue;
 
         this.setState({ value: value.toString() });
         const { onChange } = this.props;
